@@ -1,0 +1,45 @@
+body {
+	background-color: rgb(54, 54, 54)!important;
+}
+
+#h1menu {
+	color: white;
+	font-size: 3em;
+	text-align: center;
+}
+
+#h2menu {
+	color: white;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.imagenesmenu {
+	height: 661.65px;
+	width: 945px;
+	filter: blur(4px);
+	transition-property: all;
+  	transition-duration: 0.3s;
+  	transition-timing-function: linear;
+  	z-index: 999;
+
+  	border: solid 5px;
+  	border-color: rgb(54, 54, 54);
+}
+
+.imagenesmenu:hover {
+	height: 670.65px;
+	width: 945px;
+	filter: blur(0px);
+	transition-property: all;
+  	transition-duration: 0.3s;
+  	transition-timing-function: linear;
+  	z-index: 1000;
+}
+
+#scroll {
+	height: 100px;
+	width: 100px;
+	margin-top: 10px;
+	margin-left: 48%;
+}
