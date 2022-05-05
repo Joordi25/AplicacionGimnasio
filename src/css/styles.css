@@ -5,6 +5,10 @@ body {
 	background-size: 100%;
 }
 
+.amarillo {
+	color: yellow!important;
+}
+
 #logo {
 
 	border: solid 2px;
@@ -34,6 +38,15 @@ body {
 .top {
 	margin-top: 1.5% !important;
 	height: 10%!important;
+}
+
+#up {
+	height: 70px;
+	width: 70px;
+	position: fixed;
+  	right: 0;
+  	bottom: 0;
+	position: fixed;
 }
 
 #titulo1 {
