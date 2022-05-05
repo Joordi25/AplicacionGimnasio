@@ -94,10 +94,80 @@ body {
 }
 
 #instalaciones {
+	margin-top: 0.5%;
 
 }
 
 #instalacionesh1 {
-	margin-bottom: 500px;
+	font-weight: bold;
 }
 
+#instalacionesh2 {
+	color: yellow;
+	font-size: 2em;
+	margin-top: 5%;	
+}
+
+#instalacionesp {
+	margin-bottom: 5%;
+	line-height: 200%;
+	font-size: 1.2em;
+}
+
+#instalacionesimg {
+	height: 500px;
+	width: 850px;
+	margin-top: 5%;	
+	margin-bottom: 7%;
+}
+
+#instalacionesa {
+	color: black;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	background-color: yellow;
+	text-shadow: 0px 0px 1px black;
+	font-size: 1em;
+}
+
+.tienda {
+	background-color: #717b80;
+}
+
+#tiendap {
+	color: white;
+	line-height: 200%;
+	font-size: 1.2em;
+}
+
+#tiendah2 {
+	color: yellow;
+	font-size: 2em;
+	margin-top: 5%;	
+}
+
+#tiendaimg {
+	height: 500px;
+	width: 850px;
+	margin-top: 5%;	
+	margin-bottom: 7%;
+}
+
+#tiendah1 {
+	font-weight: bold;
+}
+
+#tiendaa {
+	color: black;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	background-color: yellow;
+	text-shadow: 0px 0px 1px black;
+	font-size: 1.1em;
+}
