@@ -1,0 +1,97 @@
+
+body {
+	background-image: url('../../images/fondo.png');
+	background-repeat: no-repeat ;
+	background-size: 100%;
+}
+
+#logo {
+
+	border: solid 2px;
+	border-color: yellow;
+	margin-top: 15px;
+}
+
+.menu {
+	color: white;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	margin-top: 10%!important;
+}
+
+.menu:hover {
+	color: yellow;
+}
+
+.selected {
+	border: solid 2px;
+	border-color: white;
+}
+
+.top {
+	margin-top: 1.5% !important;
+	height: 10%!important;
+}
+
+#titulo1 {
+	margin-top: 8%;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 5em;
+	text-shadow: 0px 0px 10px black, 0px 0px 10px black;
+}
+
+#titulo2 {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 60px;
+	text-shadow: 0px 0px 10px black, 0px 0px 10px black;
+}
+
+#boton1 {
+	color: yellow;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	border: solid 2px;
+	border-color: white;
+	font-weight: bold;
+	text-shadow: 0px 0px 10px black, 0px 0px 10px black;
+}
+
+#boton2 {
+	color: black;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	border: solid 2px;
+	border-color: white;
+	background-color: white;
+	font-weight: bold;
+}
+
+#scroll {
+	height: 100px;
+	width: 100px;
+	margin-top: 270px;
+	margin-left: 47%;
+	margin-bottom: 3%;
+}
+
+#instalaciones {
+
+}
+
+#instalacionesh1 {
+	margin-bottom: 500px;
+}
+
