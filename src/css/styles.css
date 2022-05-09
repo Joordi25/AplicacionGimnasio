@@ -296,10 +296,8 @@ body {
 	}
 
 	#tiendaimg {
-	height: 400px;
-	width: 600px;
-	margin-top: 5%;	
-	margin-bottom: 7%;
+	height: 500px;
+	width: 850px;
 }
 }
 
@@ -361,6 +359,38 @@ body {
 @media only screen and (max-width: 1258px) {
 #instalaciones {
 	margin-bottom: 7%;
+}
+
+}
+
+
+@media only screen and (max-width: 875px) {
+
+#instalacionesimg {
+	height: 400px;
+	width: 650px;
+	margin-top: 5%;	
+	margin-bottom: 7%;
+}
+}
+
+
+@media only screen and (max-width: 767px) {
+
+#precios1 {
+	margin-left: 0%;
+}
+}
+
+
+@media only screen and (max-width: 576px) {
+
+header {
+	background-image: none;
+	background-color: black!important;
+	background-repeat: no-repeat ;
+	background-size: 100%;
+	width: 100%;
 }
 
 }
