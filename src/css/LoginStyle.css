@@ -1,0 +1,31 @@
+body {
+    background-image: url("../images/fondologin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(34, 34, 34, 0.75);
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border-style: solid;
+    border-color: yellow;
+    text-align: center;
+    border-width: 2px;
+}
+
+form {
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+}
+
+img {
+    margin-top: 5%;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 2px;
+    width: 150px;
+}
