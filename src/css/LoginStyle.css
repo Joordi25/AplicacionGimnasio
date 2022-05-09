@@ -29,3 +29,7 @@ img {
     border-width: 2px;
     width: 150px;
 }
+
+.help-block {
+    color: red;
+}
