@@ -3,6 +3,7 @@ body {
 	background-image: url('../../images/fondo.png');
 	background-repeat: no-repeat ;
 	background-size: 100%;
+	width: 100%;
 }
 
 .amarillo {
@@ -101,14 +102,13 @@ body {
 #scroll {
 	height: 100px;
 	width: 100px;
-	margin-top: 270px;
+	margin-top: 15%;
 	margin-left: 47%;
 	margin-bottom: 3%;
 }
 
 #instalaciones {
 	margin-top: 0.5%;
-
 }
 
 #instalacionesh1 {
@@ -282,3 +282,88 @@ body {
 .footer {
 	background-color: #0a0a0a;
 }
+
+/* @media */
+
+@media only screen and (max-width: 1742px) {
+
+	#scroll {
+		height: 100px;
+		width: 100px;
+		margin-top: 10%;
+		margin-left: 47%;
+		margin-bottom: 3%;
+	}
+
+	#tiendaimg {
+	height: 400px;
+	width: 600px;
+	margin-top: 5%;	
+	margin-bottom: 7%;
+}
+}
+
+@media only screen and (max-width: 1497px) {
+
+	#scroll {
+		height: 100px;
+		width: 100px;
+		margin-top: 7%;
+		margin-left: 47%;
+		margin-bottom: 3%;
+	}
+
+	#boton2 {
+	color: black;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	border: solid 2px;
+	border-color: white;
+	background-color: white;
+	font-weight: bold;
+	margin-left: 10%;
+}
+}
+
+@media only screen and (max-width: 1442px) {
+.tienda {
+	background-color: #717b80;
+	padding-bottom: 5%;
+}
+
+}
+
+@media only screen and (max-width: 1356px) {
+
+	#scroll {
+		height: 100px;
+		width: 100px;
+		margin-top: 5%;
+		margin-left: 47%;
+		margin-bottom: 3%;
+	}
+}
+
+@media only screen and (max-width: 1272px) {
+
+	#scroll {
+		height: 100px;
+		width: 100px;
+		margin-top: 3%;
+		margin-left: 47%;
+		margin-bottom: 3%;
+	}
+}
+
+@media only screen and (max-width: 1258px) {
+#instalaciones {
+	margin-bottom: 7%;
+}
+
+}
+
+
+
