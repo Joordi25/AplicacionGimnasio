@@ -57,7 +57,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="Views/welcome.php">Panel de control</a></li>
                                 <li><a class="dropdown-item" href="">Cesta</a></li>
-                                <li><a class="dropdown-item" href="Views/cerrar.php">Cerrar sesión</a></li>
+                                <li><a class="dropdown-item" href="../src/php/cerrar.php">Cerrar sesión</a></li>
                             </ul>
                         </div>
                     <?php endif ?>
