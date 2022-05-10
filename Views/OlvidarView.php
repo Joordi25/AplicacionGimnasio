@@ -28,19 +28,17 @@ $imagen = "../src/images/perfil/perfil_defecto.jpg";
 
 <body>
     <img src="../images/logo.png">
-    <div class="container" style="width: 800px;">
+    <div class="container" style="width: 400px;">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="row">
 
-
-                <div class="col-12 col-md-6">
+                <div class="col-12">
                     <label for="Correo">Mail</label><br>
                     <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
                 </div>
-
               
             </div>
-            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Cambiar contraseña</button><br><br><br>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Restablecer contraseña</button><br><br><br>
             <label>No tienes cuenta?</label>
             <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
             <label>Ya tienes una cuenta?</label>
