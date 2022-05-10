@@ -193,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["username"] = $username;
 
 
-            header("location: index.php");
+            header("location: ../index.php");
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($link);
         }
