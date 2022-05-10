@@ -70,7 +70,8 @@ CREATE TABLE `users` (
 
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `Correo`, `foto`, `direccion`, `nombre`, `apellidos`, `num_tlf`, `pais`, `fecha`) VALUES
-(1, 'admin', '$2y$10$vd7.He4yGsdKqZd6sF2Tj.QbcToyU5ggBB8b98a6WoMhhDe4YZhhu', '2022-03-02 16:26:11', 'admin@admin.com', 'images/perfil/perfil_defecto.jpg', 'direccion', 'nombre', 'apellidos', 999999999, 'España', '01/01/2000');
+(1, 'admin', '$2y$10$vd7.He4yGsdKqZd6sF2Tj.QbcToyU5ggBB8b98a6WoMhhDe4YZhhu', '2022-03-02 16:26:11', 'admin@admin.com', 'images/perfil/perfil_defecto.jpg', 'direccion', 'nombre', 'apellidos', 999999999, 'España', '01/01/2000'),
+(2, 'test', '$2y$10$VAY9KzCZe97x6UzbIDKHCuGN5MDTI.6LAmPVkabRkTkaMlFfw3qQC', '2022-05-10 18:26:21', 'test@test.com', '../images/perfil/perfil_defecto.jpg', 'direccion', 'test', 'test', 0, 'España', '2022-05-20');
 
 
 

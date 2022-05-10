@@ -12,8 +12,8 @@ describe('example to-do app', () => {
 
         cy.get(':nth-child(10) > .menu').click()
         cy.wait(2000)
-        cy.get('#username').type('admin')
-        cy.get('#password').type('admin')
+        cy.get('#username').type('test')
+        cy.get('#password').type('12345')
         cy.get('#iniciar').click()
             //cy.get(':nth-child(3) > .dropdown-item').should('be.visible')
         cy.wait(2000)
