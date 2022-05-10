@@ -27,11 +27,11 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 <body>
     <div class="container-fluid" id="top">
         <header>
-            <div class="row">
+            <div class="row">                
                 <div class="col-md-1">
                     <img id="logo" src="../images/logotransparente.png" width="170" height="170">
                 </div>
-                <div class="col-md-1 top"></div>
+                <div class="col-md-1"></div>
                 <div class="col-md-1 top">
                     <a class="menu selected" href="#">INICIO</a>
                 </div>
@@ -48,7 +48,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu" href="#">SOBRE NOSOTROS</a>
                 </div>  
 
-                <div class="col-md-2 top">
+                <div class="col-md-1 top">
                     <?php if ((isset($_SESSION["loggedin"]))) : ?>
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
