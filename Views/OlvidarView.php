@@ -2,11 +2,11 @@
 session_start();
 require_once "../src/php/config.php";
 
-$username = $password = $confirm_password = $Correo = $fecha = $nombre = $num_tlf = $apellidos = "";
-$username_err = $password_err = $confirm_password_err = $Correo_err = $nombre_err = $fecha_err = $num_tlf_err = $apellidos_err = "";
+$username = $password = $confirm_password = $Correo = "";
+$username_err = $password_err = $confirm_password_err = $Correo_err = "";
 $direccion = "direccion";
 $pais = "España";
-$imagen = "../images/perfil/perfil_defecto.jpg";
+$imagen = "../src/images/perfil/perfil_defecto.jpg";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -37,8 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_close($stmt);
     }
 
-
-
     if (empty(trim($_POST["Correo"]))) {
         $Correo_err = "Por favor ingrese un correo.";
     } else {
@@ -64,96 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         mysqli_stmt_close($stmt);
     }
-
-    if (empty(trim($_POST["nombre"]))) {
-        $nombre_err = "Por favor ingrese un nombre.";
-    } else {
-        $sql = "SELECT id FROM users WHERE nombre = ?";
-
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_nombre);
-
-            $param_nombre = trim($_POST["nombre"]);
-
-            if (mysqli_stmt_execute($stmt)) {
-                mysqli_stmt_store_result($stmt);
-
-                $nombre = trim($_POST["nombre"]);
-            } else {
-                echo "Al parecer algo salió mal.";
-            }
-        }
-
-        mysqli_stmt_close($stmt);
-    }
-
-    if (empty(trim($_POST["apellidos"]))) {
-        $apellidos_err = "Por favor ingrese los apellidos.";
-    } else {
-        $sql = "SELECT id FROM users WHERE apellidos = ?";
-
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_apellidos);
-
-            $param_apellidos = trim($_POST["apellidos"]);
-
-            if (mysqli_stmt_execute($stmt)) {
-                mysqli_stmt_store_result($stmt);
-
-                $apellidos = trim($_POST["apellidos"]);
-            } else {
-                echo "Al parecer algo salió mal.";
-            }
-        }
-
-        mysqli_stmt_close($stmt);
-    }
-
-    if (empty(trim($_POST["fecha"]))) {
-        $fecha_err = "Por favor ingrese su fecha de nacimiento.";
-    } else {
-        $sql = "SELECT id FROM users WHERE fecha = ?";
-
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_fecha);
-
-            $param_fecha = trim($_POST["fecha"]);
-
-            if (mysqli_stmt_execute($stmt)) {
-                mysqli_stmt_store_result($stmt);
-
-                $fecha = trim($_POST["fecha"]);
-            } else {
-                echo "Al parecer algo salió mal.";
-            }
-        }
-
-        mysqli_stmt_close($stmt);
-    }
-
-
-    if (empty(trim($_POST["num_tlf"]))) {
-        $num_tlf_err = "Por favor ingrese el número de teléfono.";
-    } else {
-        $sql = "SELECT id FROM users WHERE num_tlf = ?";
-
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_num_tlf);
-
-            $param_num_tlf = trim($_POST["num_tlf"]);
-
-            if (mysqli_stmt_execute($stmt)) {
-                mysqli_stmt_store_result($stmt);
-
-                $num_tlf = trim($_POST["num_tlf"]);
-            } else {
-                echo "Al parecer algo salió mal.";
-            }
-        }
-
-        mysqli_stmt_close($stmt);
-    }
-
 
     if (empty(trim($_POST["password"]))) {
         $password_err = "Por favor ingresa una contraseña.";
@@ -205,11 +113,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -234,21 +137,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row">
 
                 <div class="col-12 col-md-6">
-                    <div class="control-group">
-                        <label for="nombre control-label">Nombre</label><br>
-                        <div class="controls">
-                            <input class="form-control" type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required><br><br>
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                    <label for="apellidos">Apellidos</label><br>
-                    <input class="form-control" type="text" id="apellidos" value="<?php echo $apellidos; ?>" name="apellidos" required><br><br>
-                </div> 
-
-                <div class="col-12 col-md-6">
                     <label for="username">Usuario</label><br>
                     <input class="form-control" type="text" id="username" name="username" value="<?php echo $username; ?>" required><br><br>
                 </div>
@@ -259,18 +147,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <label for="num_tlf">Teléfono</label><br>
-                    <input class="form-control" max="1" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
-                </div>
-
-                <div class="col-12 col-md-6">
-                    <label for="fecha">Fecha de nacimiento</label><br>
-                    <input class="form-control" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" required><br><br>
-                </div>
-
-                <div class="col-12 col-md-6">
                     <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                        <label for="confirm_password">Contraseña</label><br>
+                        <label for="confirm_password">Nueva Contraseña</label><br>
                         <span class="help-block"><?php echo $password_err; ?></span>
                         <input class="form-control" type="password" name="confirm_password" id="confirm_password" value="<?php echo $confirm_password; ?>" required><br><br>
                     </div>
@@ -278,13 +156,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6">
                     <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                        <label for="password">Repetir Contraseña</label><br>
+                        <label for="password">Repetir Nueva Contraseña</label><br>
                         <span class="help-block"><?php echo $confirm_password_err; ?></span>
                         <input class="form-control" type="password" name="password" id="password" value="<?php echo $confirm_password; ?>" required><br><br>
                     </div>
                 </div>
             </div>
-            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Registrarme</button><br><br><br>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Cambiar contraseña</button><br><br><br>
+            <label>No tienes cuenta?</label>
+            <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
             <label>Ya tienes una cuenta?</label>
             <a style="color: yellow" href="LoginView.php"> Inicia sesión</a><br><br>
             <a style="color: yellow" href="index.php">Inicio</a><br><br>
@@ -293,11 +173,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 <script>
-    //(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+    /*(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
     require(["validate.js"], function(validate) {
         // ...
     });
-    var validate = require("validate.js");
+    //var validate = require("validate.js");*/
 </script>
 
 </html>

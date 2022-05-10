@@ -64,18 +64,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="../src/css/LoginStyle.css" rel="stylesheet">
+    <script src="../src/JavaScript/Rergister.js"></script>
     <title>Login Zeus</title>
 </head>
 
 <body>
     <img src="../images/logo.png">
-    <div class="container" style="width: 500px;">
+    <div class="container" style="width: 400px;">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-            <label for="user">Usuario</label><br>
+            <label for="username">Usuario</label><br>
             <span class="help-block"><?php echo $username_err; ?></span>
-            <input class="form-control" type="text" id="username" name="username"><br><br>
+            <input class="form-control" type="text" id="username" name="username" required><br><br>
         </div>
 
         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
@@ -84,10 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input class="form-control" type="password" name="password" id="password" required><br><br>
         </div>
 
-            <button type="submit" class="btn btn-outline-warning" id="iniciar" href="index.php">Iniciar sesión</button><br><br><br>
+            <button type="submit" class="btn btn-outline-warning" id="iniciar" href="index.html">Iniciar sesión</button><br><br><br>
             <label>No tienes cuenta?</label>
             <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
-            <label style="color: yellow">Restablecer contraseña</label><br><br>
+            <a style="color: yellow" href="OlvidarView.php">Restablecer contraseña</a><br><br>
+            <a style="color: yellow" href="index.php">Inicio</a><br><br>
         </form>
     </div>
 </body>
