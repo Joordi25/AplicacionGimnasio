@@ -3,7 +3,24 @@ session_start();
 
 require "config.php";
 
+
+
 $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : 'registrate';
+
+
+
+$usuarios = "SELECT * FROM users WHERE username = '$user' ";
+$result = mysqli_query($link, $usuarios);
+$row = mysqli_fetch_assoc($result);
+
+$nombre = ($row['nombre']);
+$apellidos = ($row['apellidos']);
+$num = ($row['num_tlf']);
+$direccion = ($row['direccion']);
+$pais = ($row['pais']);
+$imagen = ($row['foto']);
+
+
 
 
 ?>
@@ -36,15 +53,15 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                             <h4 class="text-right">Editar Perfil</h4>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-6"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="nombre" name="nombre"></div>
-                            <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" class="form-control" name="apellidos" placeholder="apellidos"></div>
+                            <div class="col-md-6"><label class="labels">Nombre</label><input type="text" value="<?php echo $nombre; ?>" class="form-control" placeholder="nombre" name="nombre"></div>
+                            <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" value="<?php echo $apellidos; ?>" class="form-control" name="apellidos" placeholder="apellidos"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Numero de Telefono</label><input type="text" maxlength="9" class="form-control" placeholder="Numero tlf" name="num_tlf"></div> <br>
-                            <br><div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" placeholder="dirección" name="direccion"></div>
+                            <div class="col-md-12"><label class="labels">Numero de Telefono</label><input type="text" maxlength="9" value="<?php echo $num; ?>" class="form-control" placeholder="Numero tlf" name="num_tlf"></div> <br>
+                            <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" value="<?php echo $direccion; ?>" placeholder="dirección" name="direccion"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" placeholder="Pais" name="pais"></div>
+                            <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais"></div>
                         </div> <br> <br>
                         <input type="file" name="img" accept="image/png, image/jpeg">
                         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar Perfil</button></div>
