@@ -6,6 +6,10 @@ body {
 	width: 100%;
 }
 
+.text-justify {
+	text-align: justify;
+  }
+
 .amarillo {
 	color: yellow!important;
 }
