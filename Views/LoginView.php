@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["id"] = $fila['id'];
             $_SESSION["username"] = $username;
 
-            header("location: index.html");
+            header("location: index.php");
         } else {
             $password_err = "La contraseña que has ingresado no es válida.";
         }
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input class="form-control" type="password" name="password" id="password" required><br><br>
         </div>
 
-            <button type="submit" class="btn btn-outline-warning" id="iniciar" href="index.html">Iniciar sesión</button><br><br><br>
+            <button type="submit" class="btn btn-outline-warning" id="iniciar" href="index.php">Iniciar sesión</button><br><br><br>
             <label>No tienes cuenta?</label>
             <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
             <label style="color: yellow">Restablecer contraseña</label><br><br>
