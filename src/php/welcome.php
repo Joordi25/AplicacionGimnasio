@@ -34,7 +34,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
     <p>
         <a href="perfil.php" class="btn btn-primary">Ver datos del perfil</a>
         <a href="eliminar.php" class="btn btn-danger">Eliminar Cuenta</a>
-        <a href="..\Index.php" class="btn btn-success">Volver al inicio</a>
+        <a href="../../Views/index.php" class="btn btn-success">Volver al inicio</a>
         <?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
         <a href="usuarios.php" class="btn btn-warning">Gestionar usuarios</a>
         <?php endif ?>
