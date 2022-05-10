@@ -39,7 +39,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu" href="#">TARIFAS</a>
                 </div>
                 <div class="col-md-1 top">
-                    <a class="menu" href="#">MARKETPLACE</a>
+                    <a class="menu" href="../src/php/cesta/inicio.php">MARKETPLACE</a>
                 </div>
                 <div class="col-md-1 top">
                     <a class="menu" href="contactoView.html">CONTACTO</a>
@@ -56,7 +56,10 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="../src/php/perfil.php">Cuenta</a></li>
-                                <li><a class="dropdown-item" href="">Cesta</a></li>
+                                <?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
+                                <a class="dropdown-item" href="../src/php/cesta/inicio_admin.php">Productos</a>
+                                <?php endif ?>
+                                <li><a class="dropdown-item" href="../src/php/cesta/view_cart.php">Cesta</a></li>
                                 <li><a class="dropdown-item" href="../src/php/cerrar.php">Cerrar sesión</a></li>
                             </ul>
                         </div>
