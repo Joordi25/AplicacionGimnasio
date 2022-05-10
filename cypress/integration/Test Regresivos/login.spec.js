@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('example to-do app', () => {
+describe('Iniciar Sesión en la web', () => {
     beforeEach(() => {
 
         cy.visit('http://localhost/AplicacionGimnasio/Views/index.php')
