@@ -1,0 +1,295 @@
+<?php
+session_start();
+require_once "../src/php/config.php";
+
+$username = $password = $confirm_password = $Correo = $fecha = $nombre = $num_tlf = $apellidos = "";
+$username_err = $password_err = $confirm_password_err = $Correo_err = $nombre_err = $fecha_err = $num_tlf_err = $apellidos_err = "";
+$direccion = "direccion";
+$pais = "España";
+$imagen = "../src/images/perfil/perfil_defecto.jpg";
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (empty(trim($_POST["username"]))) {
+        $username_err = "Por favor ingrese un usuario.";
+    } else {
+        $sql = "SELECT id FROM users WHERE username = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            $param_username = trim($_POST["username"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    $username_err = "Este usuario ya está registrado.";
+                } else {
+                    $username = trim($_POST["username"]);
+                }
+            } else {
+                echo "Al parecer algo salió mal.";
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+
+
+    if (empty(trim($_POST["Correo"]))) {
+        $Correo_err = "Por favor ingrese un correo.";
+    } else {
+        $sql = "SELECT id FROM users WHERE Correo = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_correo);
+
+            $param_correo = trim($_POST["Correo"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    $Correo_err = "Este correo ya está registrado.";
+                } else {
+                    $Correo = trim($_POST["Correo"]);
+                }
+            } else {
+                echo "Al parecer algo salió mal.";
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+    if (empty(trim($_POST["nombre"]))) {
+        $nombre_err = "Por favor ingrese un nombre.";
+    } else {
+        $sql = "SELECT id FROM users WHERE nombre = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_nombre);
+
+            $param_nombre = trim($_POST["nombre"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+
+                $nombre = trim($_POST["nombre"]);
+                
+            } else {
+                echo "Al parecer algo salió mal.";
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+    if (empty(trim($_POST["apellidos"]))) {
+        $apellidos_err = "Por favor ingrese los apellidos.";
+    } else {
+        $sql = "SELECT id FROM users WHERE apellidos = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_apellidos);
+
+            $param_apellidos = trim($_POST["apellidos"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+
+                $apellidos = trim($_POST["apellidos"]);
+                
+            } else {
+                echo "Al parecer algo salió mal.";
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+    if (empty(trim($_POST["fecha"]))) {
+        $fecha_err = "Por favor ingrese su fecha de nacimiento.";
+    } else {
+        $sql = "SELECT id FROM users WHERE fecha = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_fecha);
+
+            $param_fecha = trim($_POST["fecha"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+
+                $fecha = trim($_POST["fecha"]);
+                
+            } else {
+                echo "Al parecer algo salió mal.";
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+
+    if (empty(trim($_POST["num_tlf"]))) {
+        $num_tlf_err = "Por favor ingrese el número de teléfono.";
+    } else {
+        $sql = "SELECT id FROM users WHERE num_tlf = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $param_num_tlf);
+
+            $param_num_tlf = trim($_POST["num_tlf"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+
+                $num_tlf = trim($_POST["num_tlf"]);
+                
+            } else {
+                echo "Al parecer algo salió mal.";
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+
+    if (empty(trim($_POST["password"]))) {
+        $password_err = "Por favor ingresa una contraseña.";
+    } elseif (strlen(trim($_POST["password"])) < 5) {
+        $password_err = "La contraseña al menos debe tener 5 caracteres.";
+    } else {
+        $password = trim($_POST["password"]);
+    }
+
+    if (empty(trim($_POST["confirm_password"]))) {
+        $confirm_password_err = "Confirma tu contraseña.";
+    } else {
+        $confirm_password = trim($_POST["confirm_password"]);
+        if (empty($password_err) && ($password != $confirm_password)) {
+            $confirm_password_err = "No coincide la contraseña.";
+        }
+    }
+
+    if (empty($username_err) && empty($password_err) && empty($confirm_password_err && empty($Correo_err)) && empty($password_err)) {
+
+
+
+        $codigo_email = sha1(time() + rand(0, 9999));
+        $hashed_password = password_hash("$password", PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users (username, password, Correo, direccion, nombre, apellidos, num_tlf, pais, fecha, foto)
+                VALUES ('$username', '$hashed_password', '$Correo', '$direccion', '$nombre', '$apellidos', '$num_tlf', '$pais', '$fecha', '$imagen')";
+
+
+
+        if (mysqli_query($link, $sql)) {
+
+            $_SESSION["loggedin"] = true;
+            $_SESSION["username"] = $username;
+
+
+            header("location: index.html");
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($link);
+        }
+
+        mysqli_close($link);
+
+
+        echo "<br>jiwjei<br>";
+        mysqli_stmt_close($stmt);
+    }
+
+    mysqli_close($link);
+}
+?>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="../src/css/LoginStyle.css" rel="stylesheet">
+    <title>Register Zeus</title>
+</head>
+
+<body>
+    <img src="../images/logo.png">
+    <div class="container" style="width: 700px;">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="row">
+                <div class="col-12 col-md-6">
+
+                    <div class="form-group <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
+                        <label for="name">Nombre</label><br>
+                        <span class="help-block"><?php echo $nombre_err; ?></span> 
+                        <input class="form-control" type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>"><br><br>
+                    </div>
+
+                    <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                        <label for="user">Usuario</label><br>
+                        <span class="help-block"><?php echo $username_err; ?></span> 
+                        <input class="form-control" type="text" id="username" name="username" value="<?php echo $username; ?>"><br><br>
+                    </div>
+
+                    <div class="form-group <?php echo (!empty($num_tlf_err)) ? 'has-error' : ''; ?>">
+                        <label for="phone">Teléfono</label><br>
+                        <span class="help-block"><?php echo $num_tlf_err; ?></span> 
+                        <input class="form-control" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" ><br><br>
+                    </div>
+
+                    <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                        <label for="password">Contraseña</label><br>
+                        <span class="help-block"><?php echo $password_err; ?></span>
+                        <input class="form-control" type="password" name="confirm_password" id="confirm_password" value="<?php echo $confirm_password; ?>"><br><br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+
+                <div class="form-group <?php echo (!empty($apellidos_err)) ? 'has-error' : ''; ?>">
+                    <label for="surname">Apellidos</label><br>
+                    <span class="help-block"><?php echo $apellidos_err; ?></span>
+                    <input class="form-control" type="text" id="apellidos" value="<?php echo $apellidos; ?>" name="apellidos" ><br><br>
+                </div>
+
+                    <div class="form-group <?php echo (!empty($Correo_err)) ? 'has-error' : ''; ?>">
+                        <label for="mail">Mail</label><br>
+                        <span class="help-block"><?php echo $Correo_err; ?></span>
+                        <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" ><br><br>
+                    </div>
+                    
+                    <div class="form-group <?php echo (!empty($fecha_err)) ? 'has-error' : ''; ?>"> 
+                        <label for="age">Fecha de nacimiento</label><br>
+                        <span class="help-block"><?php echo $fecha_err; ?></span>
+                        <input class="form-control" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" ><br><br>
+                    </div>
+
+                    <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                        <label for="password">Repetir Contraseña</label><br>
+                        <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                        <input class="form-control" type="password" name="password" id="password"  value="<?php echo $confirm_password; ?>"><br><br>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Registrarme</button><br><br><br>
+            <label>Ya tienes una cuenta?</label>
+            <a style="color: yellow" href="LoginView.php"> Inicia sesión</a><br><br>
+        </form>
+    </div>
+</body>
+
+</html>
