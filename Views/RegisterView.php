@@ -6,7 +6,7 @@ $username = $password = $confirm_password = $Correo = $fecha = $nombre = $num_tl
 $username_err = $password_err = $confirm_password_err = $Correo_err = $nombre_err = $fecha_err = $num_tlf_err = $apellidos_err = "";
 $direccion = "direccion";
 $pais = "España";
-$imagen = "../src/images/perfil/perfil_defecto.jpg";
+$imagen = "../images/perfil/perfil_defecto.jpg";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

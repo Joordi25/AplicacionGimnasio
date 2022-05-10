@@ -55,7 +55,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                                 Hola, <?php echo $user; ?>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="Views/welcome.php">Panel de control</a></li>
+                                <li><a class="dropdown-item" href="../src/php/perfil.php">Cuenta</a></li>
                                 <li><a class="dropdown-item" href="">Cesta</a></li>
                                 <li><a class="dropdown-item" href="../src/php/cerrar.php">Cerrar sesión</a></li>
                             </ul>
