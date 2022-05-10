@@ -107,6 +107,10 @@ body {
 	margin-bottom: 3%;
 }
 
+.text-justify {
+	text-align: justify;
+  }
+
 #instalaciones {
 	margin-top: 0.5%;
 }

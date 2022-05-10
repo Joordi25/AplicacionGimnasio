@@ -107,12 +107,9 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <div class="col-md-1"></div>
             <div class="col-lg-4 col-md-12">
                 <h1 id="instalacionesh1">Descubre nuestras instalaciones</h1>
-                <p id="instalacionesp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p id="instalacionesp" class="text-justify">Actualmente, contamos con unas instalaciones modernas y eficientes, contando con todo el material para poder llevar a cabo entrenos y sesiones programadas y privadas. Disponemos de varias salas de entreno para que nuestros
+                clientes puedan desarrollar sus ejercicios con gran capacidad y de fácil accesibilidad. También cabe añadir que tanto zonas de máquinas y salas de sesiones grupales, constan de material de alta calidad, con el que podamos satisfacer todas las necesidades de nuestros clientes. Si quieres visitar nuestro centro no dudes en contactarnos.
+                </p>
                 <a href="" id="instalacionesa">Conoce nuestras tarifas</a>
             </div>
             <div class="col-md-1"></div>
@@ -127,12 +124,12 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             </div>
             <div class="col-lg-4 col-md-12">
                 <h1 id="tiendah1">Descubre nuestra tienda</h1>
-                <p id="tiendap">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p id="tiendap" class="text-justify">Si! También contamos con una tienda física y online, dentro de nuestras instalaciones y página.
+                Cabe decir que nuestra tienda que un material tanto deportivo como nutricional de alta calidad, ofreciendo una
+                gama completa de las mejores y más reconocidas marcas por deportistas. Contamos con profesionales que podrán ayudarte
+                y aconsejarte las mejores opciones y tips para tus entrenos. Tenemos una alta disponibilidad de stock de todos nuestros 
+                productos, así que no te preocupes por nada!. ¡Si quieres descubrir más acerca de nuestra tienda pincha aquí!.
+                </p>
                 <a href="" id="tiendaa">Ir a la Tienda</a>
             </div>
             <div class="col-md-1"></div>                    
