@@ -1,0 +1,8 @@
+<ifModule mod_rewrite.c>
+Options -Multiviews
+RewriteEngine On
+RewriteBase /ECJBM
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ Index.php?url=$1 [QSA,L]
+</IfModule>
