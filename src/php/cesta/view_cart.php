@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Carrito</title>
-	<link rel="icon" href="../images/favicon.png">
+	<link rel="icon" href="../../../images/icon.png">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 </head>
 <body>

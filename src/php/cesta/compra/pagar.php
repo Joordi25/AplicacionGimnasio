@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <title>CodePen - Payment card checkout</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="./style.css">
-  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../../../images/icon.png" type="image/x-icon">
 
 </head>
 <body>

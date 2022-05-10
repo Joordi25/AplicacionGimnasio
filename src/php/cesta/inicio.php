@@ -18,7 +18,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 <head>
 	<meta charset="utf-8">
 	<title>Productos</title>
-	<link rel="icon" href="../images/favicon.png">
+	<link rel="icon" href="../../../images/icon.png">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<style>
 		.product_image {
