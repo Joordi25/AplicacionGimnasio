@@ -3,7 +3,7 @@ session_start();
 
 
 /*if (!isset($_SESSION['cart'])) {
-	$_SESSION['cart'] = array();
+    $_SESSION['cart'] = array();
 }*/
 
 $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : 'registrate';
@@ -48,26 +48,27 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu" href="#">SOBRE NOSOTROS</a>
                 </div>  
 
-                <?php if ((isset($_SESSION["loggedin"]))) : ?>
-                    <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Hola, <?php echo $user; ?>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Views/welcome.php">Panel de control</a>
-                        <a class="dropdown-item" href="">Cesta</a>
-                        <a class="dropdown-item" href="Views/cerrar.php">Cerrar sesión</a>
-                    </div>
-                </div>
-                <?php endif ?>
-
-                <?php if ((!isset($_SESSION["loggedin"]))) : ?>
-                <div class="col-md-1 top">
-                    <a class="menu amarillo" href="RegisterView.php">REGISTRARSE</a>
-                </div> 
                 <div class="col-md-2 top">
-                    <a class="menu" href="LoginView.php">INICIAR SESIÓN</a>
+                    <?php if ((isset($_SESSION["loggedin"]))) : ?>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hola, <?php echo $user; ?>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="Views/welcome.php">Panel de control</a></li>
+                                <li><a class="dropdown-item" href="">Cesta</a></li>
+                                <li><a class="dropdown-item" href="Views/cerrar.php">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    <?php endif ?>
                 </div>
+                <?php if ((!isset($_SESSION["loggedin"]))) : ?>
+                    <div class="col-md-1 top">
+                        <a class="menu amarillo" href="RegisterView.php">REGISTRARSE</a>
+                    </div> 
+                    <div class="col-md-2 top">
+                        <a class="menu" href="LoginView.php">INICIAR SESIÓN</a>
+                    </div>
                 <?php endif ?>
 
             </div>
