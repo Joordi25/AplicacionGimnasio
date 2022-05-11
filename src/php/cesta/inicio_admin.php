@@ -20,6 +20,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 	<title>Productos</title>
 	<link rel="icon" href="../images/favicon.png">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link href="../../css/StyleProductos.css" rel="stylesheet">
 	<style>
 		.product_image {
 			height: 200px;
@@ -43,34 +44,66 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 </head>
 
 <body>
-	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
+	<div class="row">
+		<div class="col-md-1">
+			<img id="logo" src="../../../images/logotransparente.png" width="170" height="170" style="margin-left: 10px;">
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-1 top">
+			<a class="menu selected" href="../../../Views/index.php#">INICIO</a>
+		</div>
+		<div class="col-md-1 top">
+			<a class="menu" href="../../../Views/index.php#price">TARIFAS</a>
+		</div>
+		<div class="col-md-1 top">
+			<a class="menu" href="../../../src/php/cesta/inicio.php">MARKETPLACE</a>
+		</div>
+		<div class="col-md-1 top">
+			<a class="menu" href="../../../Views/contactoView.html">CONTACTO</a>
+		</div>
+		<div class="col-md-2 top">
+			<a class="menu" href="../../../Views/index.php#">SOBRE NOSOTROS</a>
+		</div>
+
+		<div class="col-md-1 top">
+			<?php if ((isset($_SESSION["loggedin"]))) : ?>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+						Hola, <?php echo $user; ?>
 					</button>
-					<a class="navbar-brand" href="../../../Views/index.php">INICIO</a>
-					<?php if ((isset($_SESSION["loggedin"]))) : ?>
-						<p class="navbar-brand"> Hola, <?php echo $user; ?></p>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						<li><a class="dropdown-item" href="../../../src/php/perfil.php">Cuenta</a></li>
 						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
-							<span class="pull-right"><a href="añadir_pala.php" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Añadir producto</a></span>
-							<?php endif ?>
-					<?php endif ?>
-
-					
-					
-
-					<?php if ((!isset($_SESSION["loggedin"]))) : ?>
-						<p class="navbar-brand"> No puedes comprar sino estás registrado</p>
-					<?php endif ?>
+							<a class="dropdown-item" href="../../../src/php/cesta/inicio_admin.php">Productos</a>
+						<?php endif ?>
+						<li><a class="dropdown-item" href="../../../src/php/cesta/view_cart.php">Cesta</a></li>
+						<li><a class="dropdown-item" href="../../../src/php/cerrar.php">Cerrar sesión</a></li>
+					</ul>
 				</div>
-
+			<?php endif ?>
+			
+			<nav class="">
+				<?php if ((isset($_SESSION["loggedin"]))) : ?>
+					<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
+						<br><span class=""><a href="añadir_pala.php" style="color: yellow;"><span></span> Añadir producto</a></span>
+					<?php endif ?>
+				<?php endif ?>
+				<?php if ((!isset($_SESSION["loggedin"]))) : ?>
+					<p style="color: red;"> No puedes comprar sino estás registrado</p>
+				<?php endif ?>
+			</nav>
+		</div>
+		<?php if ((!isset($_SESSION["loggedin"]))) : ?>
+			<div class="col-md-1 top">
+				<a class="menu amarillo" href="../../../Views/RegisterView.php">REGISTRARSE</a>
 			</div>
-		</nav>
+			<div class="col-md-2 top">
+				<a class="menu" href="../../../Views/LoginView.php">INICIAR SESIÓN</a>
+			</div>
+		<?php endif ?>
+
+	</div>
+	<div class="container">
 		<?php
 		//info message
 		if (isset($_SESSION['message'])) {
@@ -97,23 +130,24 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			$inc = ($inc == 4) ? 1 : $inc + 1;
 			if ($inc == 1) echo "<div class='row text-center'>";
 		?>
-			<div class="col-sm-3">
-				<div class="panel panel-default hola">
-					<div class="panel-body">
-						<div class="row product_image">
-							<img src="<?php echo $row['photo'] ?>" width="80%" height="auto"> <br> <br>
+			<div class="col-sm-3" style="margin-bottom: 15px;">
+				<div class="productos">
+					<div class="">
+						<div class="row">
+							<br>
+							<img src="<?php echo $row['photo'] ?>" width="80%" height="auto">
 						</div>
-						<div class="row product_name">
-							<br> <br> <br>
-							<h4><?php echo $row['name']; ?></h4>
+						<div class="row">
+							<br>
+							<h4 class="nombreProducto"><?php echo $row['name']; ?></h4>
 						</div>
-						
-
 
 						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
-							<div class="row product_footer">
-								<br> <br><span class="pull-right"><a href="delete_pala.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
+							<br>
+							<div class="row product_footer"><span>
+									<a href="delete_pala.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
 							</div>
+							<br>
 						<?php endif ?>
 
 					</div>
