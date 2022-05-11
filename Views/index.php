@@ -37,7 +37,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu selected" href="#">INICIO</a>
                 </div>
                 <div class="col-md-1 top">
-                    <a class="menu" href="#">TARIFAS</a>
+                    <a class="menu" href="#price">TARIFAS</a>
                 </div>
                 <div class="col-md-1 top">
                     <a class="menu" href="../src/php/cesta/inicio.php">MARKETPLACE</a>
@@ -141,7 +141,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             </div>
             <div class="col-md-1"></div>                    
         </div>
-        <div class="row precios bg-dark">
+        <div id="price" class="row precios bg-dark">
 
             <div class="col-md-3 col-sm-12 col-xs-12 col-12" id="precios1">
                 <div class="preciosname">
