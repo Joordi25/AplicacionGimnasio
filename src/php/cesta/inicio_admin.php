@@ -135,17 +135,21 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 					<div class="">
 						<div class="row">
 							<br>
-							<img src="<?php echo $row['photo'] ?>" width="80%" height="auto">
+							<img src="<?php echo $row['photo'] ?>" width="175px" height="175px">
 						</div>
 						<div class="row">
 							<br>
-							<h4 class="nombreProducto"><?php echo $row['name']; ?></h4>
+							<h4 class="nombreProducto"><?php echo $row['name']; ?><br> <br>
+							<p><b><?php echo $row['price'] . "€"; ?></b></p> 
+						</h4>
+							
 						</div>
 
 						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
 							<br>
 							<div class="row product_footer"><span>
-									<a href="delete_pala.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
+							
+							<a href="delete_pala.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
 							</div>
 							<br>
 						<?php endif ?>

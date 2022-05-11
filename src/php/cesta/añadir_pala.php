@@ -19,8 +19,8 @@ require_once "../config.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  or use local jquery
     <script src="../src/libs/jqBootstrapValidation.js"></script>
     <script src="../src/libs/validate.min.js"></script>-->
-    <title>Login Zeus</title>
-    <link rel="icon" href="../images/favicon.png">
+    <title>Añadir Producto</title>
+    <link rel="icon" href="../../../images/icon.png">
 </head>
 
 <body>
