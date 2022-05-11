@@ -44,7 +44,9 @@ $imagen = ($row['foto']);
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col-md-3 border-right">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?php print ($imagen);?>"><span class="font-weight-bold"><?php echo "$user" ?></span></div>
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?php print ($imagen);?>"><span class="font-weight-bold"><?php echo "$user" ?></span>
+                        <br> <a class="btn btn-danger profile-button" href="delete_image.php">Eliminar foto</a>
+                    </div>
                 </div>
                 <div class="col-md-5 border-right">
                     <div class="p-3 py-5">

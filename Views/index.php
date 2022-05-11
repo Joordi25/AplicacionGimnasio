@@ -2,9 +2,9 @@
 session_start();
 
 
-/*if (!isset($_SESSION['cart'])) {
+if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
-}*/
+}
 
 $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : 'registrate';
 
