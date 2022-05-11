@@ -205,11 +205,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -223,8 +218,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="../src/css/LoginStyle.css" rel="stylesheet">
     <!--<script src="../src/JavaScript/Rergister.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  or use local jquery
-    <script src="../src/libs/jqBootstrapValidation.js"></script>-->
-    <script src="../src/libs/validate.min.js"></script>
+    <script src="../src/libs/jqBootstrapValidation.js"></script>
+    <script src="../src/libs/validate.min.js"></script>-->
     <title>Register Zeus</title>
 </head>
 
@@ -294,11 +289,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 <script>
-    //(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+    /*//(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
     require(["validate.js"], function(validate) {
         // ...
     });
-    var validate = require("validate.js");
+    var validate = require("validate.js");*/
 </script>
 
 </html>
