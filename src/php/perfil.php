@@ -63,7 +63,7 @@ $imagen = ($row['foto']);
                             <div class="col-md-12"><label class="labels">País</label><input type="text" class="form-control" placeholder="<?php echo $pais; ?>" name="pais" disabled></div>
                         </div>
                          <br> <br>
-                        <div class="mt-5 text-center"><a class="btn btn-primary profile-button" href="edit_perfil.php">Editar Perfil</a></div>
+                        <div class="mt-5 text-center"><a class="btn btn-warning profile-button" href="edit_perfil.php">Editar Perfil</a></div>
                         <div class="mt-5 text-center"><a class="btn btn-primary profile-button" href="../../Views/index.php">Atrás</a></div>
                     </div>
                 </div>
