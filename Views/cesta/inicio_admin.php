@@ -57,12 +57,12 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 					<?php if ((isset($_SESSION["loggedin"]))) : ?>
 						<p class="navbar-brand"> Hola, <?php echo $user; ?></p>
 						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
-							<span class="pull-right"><a href="añadir_pala.php" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Añadir producto</a></span>
-							<?php endif ?>
+							<span class="pull-right"><a href="añadir_pala.php" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span>Añaasdasddir producto</a></span>
+						<?php endif ?>
 					<?php endif ?>
 
-					
-					
+
+
 
 					<?php if ((!isset($_SESSION["loggedin"]))) : ?>
 						<p class="navbar-brand"> No puedes comprar sino estás registrado</p>
@@ -107,7 +107,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 							<br> <br> <br>
 							<h4><?php echo $row['name']; ?></h4>
 						</div>
-						
+
 
 
 						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>

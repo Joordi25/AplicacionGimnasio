@@ -5,8 +5,6 @@ require_once "../src/php/config.php";
 $username = $Correo = "";
 $imagen = "../src/images/perfil/perfil_defecto.jpg";
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +19,8 @@ $imagen = "../src/images/perfil/perfil_defecto.jpg";
     <link href="../src/css/LoginStyle.css" rel="stylesheet">
     <!--<script src="../src/JavaScript/Rergister.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  or use local jquery
-    <script src="../src/libs/jqBootstrapValidation.js"></script>-->
-    <script src="../src/libs/validate.min.js"></script>
+    <script src="../src/libs/jqBootstrapValidation.js"></script>
+    <script src="../src/libs/validate.min.js"></script>-->
     <title>Register Zeus</title>
 </head>
 
