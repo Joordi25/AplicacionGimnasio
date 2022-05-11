@@ -147,7 +147,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <div class="preciosname">
                     <h1 id="preciosh1">BASIC</h1>
                     <div class="preciosprice">
-                        <h2 id="preciosh2">50€<small id="preciossmall">/mes</small></h2>     
+                        <h2 id="preciosh2">40€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
                             <p>Contendio1</p>
                             <p>Contendio2</p>
@@ -166,7 +166,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <div class="preciosname2">
                     <h1 id="preciosh1">PRO</h1>
                     <div class="preciosprice">
-                        <h2 id="preciosh2">150€<small id="preciossmall">/mes</small></h2>     
+                        <h2 id="preciosh2">55€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
                             <p>Contendio1</p>
                             <p>Contendio2</p>
@@ -185,7 +185,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <div class="preciosname">
                     <h1 id="preciosh1">FAMILIAR</h1>
                     <div class="preciosprice">
-                        <h2 id="preciosh2">100€<small id="preciossmall">/mes</small></h2>     
+                        <h2 id="preciosh2">50€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
                             <p>Contendio1</p>
                             <p>Contendio2</p>
