@@ -32,10 +32,17 @@ $nombre_archivo_con_ext = "$nombre_archivo.$info_foto[extension]";
 move_uploaded_file($nombre_temporal, "$carpeta/$nombre_archivo_con_ext");
 
 $sql = "UPDATE users SET nombre = '$nombre', apellidos = '$apellidos', direccion = '$direccion', num_tlf = '$num_tlf', pais = '$pais', foto = '$carpeta/$nombre_archivo_con_ext' WHERE username = '$user'";
+$sql2 = "UPDATE users SET nombre = '$nombre', apellidos = '$apellidos', direccion = '$direccion', num_tlf = '$num_tlf', pais = '$pais' WHERE username = '$user'";
 
 
 
-$result = mysqli_query($link, $sql);
+if (empty ($nombre_temporal)){
+    $result = mysqli_query($link, $sql2);
+}else{
+    $result = mysqli_query($link, $sql);
+}
+
+
 
 
 
