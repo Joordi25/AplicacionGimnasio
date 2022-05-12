@@ -136,8 +136,9 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 					<div class="">
 						<div class="row">
 							<br>
-							<img src="<?php echo $row['photo'] ?>" width="175px" height="175px">
+							<img src="<?php echo $row['photo'] ?>" height="260px">
 						</div>
+						<br>
 						<div class="row">
 							<br>
 							<h4 class="nombreProducto"><?php echo $row['name']; ?><br> <br>
