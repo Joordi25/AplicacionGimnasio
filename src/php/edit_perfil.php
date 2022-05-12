@@ -89,7 +89,7 @@ $(document).on('change', '#'+searchInput, function () {
                             <div class="col-md-12"><label class="labels">Numero de Telefono</label><input type="tel" maxlength="9" value="<?php echo $num; ?>" class="form-control" placeholder="Numero tlf" name="num_tlf"></div> <br>
                             <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" value="<?php echo $direccion; ?>" placeholder="Direccion" name="direccion"></div>
                         </div>
-                        <div class="row mt-3">
+                        <div class="row mt-3">/AplicacionGimnasio/Views/index.php
                             <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais" id="search_input"></div>
                         </div> <br> <br>
 
@@ -98,9 +98,10 @@ $(document).on('change', '#'+searchInput, function () {
                         <div class="mt-5 text-center"><a style="color: yellow;" href="reset-password.php">Cambiar Contraseña</a></div>
                     </div>
                 </div>
+                
                 <div class="col-md-1">
                     <div class="p-3 py-5">
-                        
+                    <div class="mt-5 text-center"><a class="btn btn-danger profile-button" href="eliminar.php">Eliminar Cuenta</a></div>
                     </div>
                 </div>
             </div>

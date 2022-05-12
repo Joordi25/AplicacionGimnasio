@@ -19,12 +19,15 @@ describe('Iniciar Sesión en la web', () => {
         cy.get('#dropdownMenuButton1').click()
         cy.get('[href="../src/php/cesta/inicio_admin.php"]').click()
         cy.wait(2000)
+
+        //Añadir producto y eliminar
         cy.get('nav > :nth-child(2) > a').click()
         cy.get('#name').type('prueba')
         cy.get('#price').type('200')
         const filepath = '/images/icon.png'
         cy.get('[type="file"]').attachFile(filepath)
         cy.get('#iniciar').click()
+        cy.get('.productos > .product_footer > :nth-child(1) > .btn').last().click()
 
 
     })
