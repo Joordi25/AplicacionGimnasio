@@ -36,10 +36,39 @@ $imagen = ($row['foto']);
     <link rel="shortcut icon" href="../../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyBTE93_pfkiAdw9Ie3oRBQF1fFVql2iCOs"></script>
     <title>Perfil</title>
+    <script>
+        var searchInput = 'search_input';
+
+$(document).ready(function () {
+    var autocomplete;
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+        types: ['geocode'],
+    });
+	
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var near_place = autocomplete.getPlace();
+        document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+        document.getElementById('loc_long').value = near_place.geometry.location.lng();
+		
+        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+    });
+});
+
+$(document).on('change', '#'+searchInput, function () {
+    document.getElementById('latitude_input').value = '';
+    document.getElementById('longitude_input').value = '';
+	
+    document.getElementById('latitude_view').innerHTML = '';
+    document.getElementById('longitude_view').innerHTML = '';
+});
+    </script>
 </head>
 
-<body onload="initMap()">
+<body>
 
     <form action="procesar_perfil.php" method="POST" enctype="multipart/form-data">
         <div class="container rounded mt-5 mb-5">
@@ -61,7 +90,7 @@ $imagen = ($row['foto']);
                             <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" value="<?php echo $direccion; ?>" placeholder="Direccion" name="direccion"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais"></div>
+                            <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais" id="search_input"></div>
                         </div> <br> <br>
 
                         <input type="file" name="img" accept="image/png, image/jpeg">
