@@ -280,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
-            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Registrarme</button><br><br><br>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning" href="LoginView.php">Registrarme</button><br><br><br>
             <label>Ya tienes una cuenta?</label>
             <a style="color: yellow" href="LoginView.php"> Inicia sesión</a><br><br>
             <a style="color: yellow" href="index.php">Inicio</a><br><br>
