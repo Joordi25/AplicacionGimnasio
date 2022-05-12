@@ -1,5 +1,6 @@
     body {
         background-image: url('../images/fondologin.png');
+        background-size: cover;
     }
     
     .labels {
