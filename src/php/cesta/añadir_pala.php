@@ -28,13 +28,13 @@ require_once "../config.php";
     <div class="container" style="width: 400px;">
     <form action="insertar.php" method="post" class="login-form" enctype="multipart/form-data">
 
-            <label for="username">Nombre del producto</label><br>
-            <input class="form-control" type="text" id="username" name="name" required><br><br>
+            <label for="name">Nombre del producto</label><br>
+            <input class="form-control" type="text" id="name" name="name" required><br><br>
 
-            <label for="password">Precio</label><br>
-            <input class="form-control" type="password" name="price" id="password" required><br><br>
+            <label for="price">Precio</label><br>
+            <input class="form-control" type="number" name="price" id="price" required><br><br>
 
-            <label for="password">Imagen</label><br>
+            <label for="img">Imagen</label><br>
             <input type="file" name="img" accept="image/png, image/jpeg"> <br> <br>
 
             <button type="submit" class="btn btn-outline-warning" id="iniciar"  href="..\Index.php">Añadir Producto</button><br><br><br>

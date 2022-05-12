@@ -1,17 +1,22 @@
     body {
-        background-image: url('../images/fondologin.png');
+        background-image: url('../images/cuenta.jpg');
+        background-size: cover;
+        background-attachment: fixed;
     }
     
     .labels {
-        color: wheat;
-        font-weight: bold;
+        color: white;
         font-size: 17px;
     }
     
     h4 {
-        color: wheat;
+        color: yellow;
+    }
+    
+    span {
+        color: yellow;
     }
     
     input {
-        color: wheat;
+        color: white;
     }

@@ -19,7 +19,9 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 	<meta charset="utf-8">
 	<title>Productos</title>
 	<link rel="icon" href="../../../images/icon.png">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="../../css/StyleProductos.css" rel="stylesheet">
 	<style>
 		.product_image {
 			height: 200px;
@@ -43,38 +45,66 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 </head>
 
 <body>
-	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
+	<div class="row">
+		<div class="col-md-1">
+			<img id="logo" src="../../../images/logotransparente.png" width="170" height="170" style="margin-left: 10px;">
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-1 top">
+			<a class="menu " href="../../../Views/index.php#">INICIO</a>
+		</div>
+		<div class="col-md-1 top">
+			<a class="menu" href="../../../Views/index.php#price">TARIFAS</a>
+		</div>
+		<div class="col-md-1 top">
+			<a class="menu selected" href="../../../src/php/cesta/inicio.php">MARKETPLACE</a>
+		</div>
+		<div class="col-md-1 top">
+			<a class="menu" href="../../../src/php/cesta/view_cart.php">CESTA</a>
+		</div>
+		<div class="col-md-2 top">
+			<a class="menu" href="../../../Views/index.php#">SOBRE NOSOTROS</a>
+		</div>
+
+		<div class="col-md-1 top">
+			<?php if ((isset($_SESSION["loggedin"]))) : ?>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+						Hola, <?php echo $user; ?>
 					</button>
-					<a class="navbar-brand" href="../../../Views/index.php">INICIO</a>
-					<?php if ((isset($_SESSION["loggedin"]))) : ?>
-						<p class="navbar-brand"> Hola, <?php echo $user; ?></p>
-					<?php endif ?>
-
-					<?php if ((!isset($_SESSION["loggedin"]))) : ?>
-						<p class="navbar-brand"> No puedes comprar sino estás registrado</p>
-					<?php endif ?>
-				</div>
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<!-- left nav here -->
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						<li><a class="dropdown-item" href="../../../src/php/perfil.php">Cuenta</a></li>
+						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
+							<a class="dropdown-item" href="../../../src/php/cesta/inicio_admin.php">Productos</a>
+						<?php endif ?>
+						<li><a class="dropdown-item" href="../../../src/php/cesta/view_cart.php">Cesta</a></li>
+						<li><a class="dropdown-item" href="../../../src/php/cerrar.php">Cerrar sesión</a></li>
 					</ul>
-					<?php if ((isset($_SESSION["loggedin"]))) : ?>
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="view_cart.php"><span class="badge"><?php echo count($_SESSION['cart']); ?></span> Carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-						</ul>
-					<?php endif ?>
 				</div>
+			<?php endif ?>
+
+			<nav class="">
+				<?php if ((isset($_SESSION["loggedin"]))) : ?>
+					<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
+						<br><span class=""><a href="añadir_pala.php" style="color: yellow;"><span></span> Añadir producto</a></span>
+					<?php endif ?>
+				<?php endif ?>
+				<?php if ((!isset($_SESSION["loggedin"]))) : ?>
+					<p style="color: red;"> No puedes comprar sino estás registrado</p>
+				<?php endif ?>
+			</nav>
+		</div>
+		<?php if ((!isset($_SESSION["loggedin"]))) : ?>
+			<div class="col-md-1 top">
+				<a class="menu amarillo" href="../../../Views/RegisterView.php">REGISTRARSE</a>
 			</div>
-		</nav>
+			<div class="col-md-2 top">
+				<a class="menu" href="../../../Views/LoginView.php">INICIAR SESIÓN</a>
+			</div>
+		<?php endif ?>
+
+	</div>
+	<div class="container">
 		<?php
 		//info message
 		if (isset($_SESSION['message'])) {
@@ -101,25 +131,27 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			$inc = ($inc == 4) ? 1 : $inc + 1;
 			if ($inc == 1) echo "<div class='row text-center'>";
 		?>
-			<div class="col-sm-3">
-				<div class="panel panel-default hola">
-					<div class="panel-body">
-						<div class="row product_image">
-							<img src="<?php echo $row['photo'] ?>" width="80%" height="auto"> <br> <br>
-						</div>
-						<div class="row product_name">
-							<br> <br> <br>
-							<h4><?php echo $row['name']; ?></h4>
-						</div>
-						<?php if ((isset($_SESSION["loggedin"]))) : ?>
-							<div class="row product_footer">
-								<br> <br>
-								<p class="pull-left"><b><?php echo $row['price'] . "€"; ?></b></p>
-								<span class="pull-right"><a href="add_cart.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span> Añadir</a></span>
-							</div>
-						<?php endif ?>
-
+			<div class="col-sm-3" style="margin-bottom: 15px;">
+				<div class="productos">
+					<div class="row">
+						<br>
+						<img src="<?php echo $row['photo'] ?>" height="260px">
 					</div>
+					<br>
+					<div class="row">
+						<br>
+						<h4 class="nombreProducto"><?php echo $row['name']; ?><br> <br>
+							<p><b><?php echo $row['price'] . "€"; ?></b></p>
+						</h4>
+					</div>
+
+					<?php if ((isset($_SESSION["loggedin"]))) : ?>
+						<br>
+						<div class="row product_footer">
+							<span class="pull-right"><a href="add_cart.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm"> Añadir</a></span>
+						</div>
+						<br>
+					<?php endif ?>
 				</div>
 			</div>
 		<?php

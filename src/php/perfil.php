@@ -58,13 +58,13 @@ $imagen = ($row['foto']);
                             <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" class="form-control" name="apellidos" placeholder="<?php echo $apellidos; ?>" disabled></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Numero de Telefono</label><input type="text" class="form-control" placeholder="<?php echo $num; ?>" name="num_tlf" disabled></div>
-                            <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" placeholder="<?php echo $direccion; ?>" name="direccion" disabled></div>
-                            <div class="col-md-12"><label class="labels">País</label><input type="text" class="form-control" placeholder="<?php echo $pais; ?>" name="pais" disabled></div>
+                            <div class="col-md-12" style="margin-bottom: 15px;"><label class="labels">Numero de Telefono</label><input type="text" class="form-control" placeholder="<?php echo $num; ?>" name="num_tlf" disabled></div>
+                            <div class="col-md-12" style="margin-bottom: 15px;"><label class="labels">Dirección</label><input type="text" class="form-control" placeholder="<?php echo $direccion; ?>" name="direccion" disabled></div>
+                            <div class="col-md-12" style="margin-bottom: 15px;"><label class="labels">País</label><input type="text" class="form-control" placeholder="<?php echo $pais; ?>" name="pais" disabled></div>
                         </div>
                          <br> <br>
                         <div class="mt-5 text-center"><a class="btn btn-warning profile-button" href="edit_perfil.php">Editar Perfil</a></div>
-                        <div class="mt-5 text-center"><a class="btn btn-primary profile-button" href="../../Views/index.php">Atrás</a></div>
+                        <div class="mt-5 text-center"><a style="color: yellow;" href="../../Views/index.php">Atrás</a></div>
                     </div>
                 </div>
                 
