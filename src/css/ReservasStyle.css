@@ -1,3 +1,9 @@
+body {
+	background-image: url('../images/reservas/reservas.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 .flecha {
 	height: 70%;
 	width: 50%;
@@ -12,13 +18,15 @@
 	margin-right: 0.5%;
 	text-align: center;
 	line-height:20px;
-	font-weight: bold;
+	font-weight: bold;	
+	border: solid 2px yellow;
 }
 
 .horaslibres {
 	margin-top: 1%!important;
-	background-color: rgb(36, 141, 125);
-	color: white;
+	background-color: yellow;
+	border: solid 2px black;
+	color: black;
 	text-align: center;
 	padding: 1% 2% 1% 2%;
 	margin-right: 0.5%;
@@ -31,4 +39,56 @@
 	text-align: center;
 	padding: 1% 2% 1% 2%;
 	margin-right: 0.5%;
+}
+
+#top {
+	margin-top: 5%;
+}
+
+.text-justify {
+	text-align: justify;
+  }
+
+.amarillo {
+	color: yellow!important;
+}
+
+#logo {
+
+	border: solid 2px;
+	border-color: yellow;
+	margin-top: 15px;
+}
+
+.menu {
+	color: white;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	margin-top: 10%!important;
+}
+
+.menu:hover {
+	color: yellow;
+}
+
+.selected {
+	border: solid 2px;
+	border-color: yellow;
+}
+
+.top {
+	margin-top: 1.5% !important;
+	height: 10%!important;
+}
+
+#up {
+	height: 70px;
+	width: 70px;
+	position: fixed;
+  	right: 0;
+  	bottom: 0;
+	position: fixed;
 }
