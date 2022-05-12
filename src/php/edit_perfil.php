@@ -36,12 +36,10 @@ $imagen = ($row['foto']);
     <link rel="shortcut icon" href="../../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
-    
-    
     <title>Perfil</title>
 </head>
 
-<body>
+<body onload="initMap()">
 
     <form action="procesar_perfil.php" method="POST" enctype="multipart/form-data">
         <div class="container rounded mt-5 mb-5">
@@ -60,11 +58,12 @@ $imagen = ($row['foto']);
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12"><label class="labels">Numero de Telefono</label><input type="tel" maxlength="9" value="<?php echo $num; ?>" class="form-control" placeholder="Numero tlf" name="num_tlf"></div> <br>
-                            <div class="col-md-12"><label class="labels">Dirección</label><input type="text" maxlength="50" class="form-control" name="direccion" value="<?php echo $direccion; ?>" placeholder="Direccion" name="direccion"></div>
+                            <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" value="<?php echo $direccion; ?>" placeholder="Direccion" name="direccion"></div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais"></div>
                         </div> <br> <br>
+
                         <input type="file" name="img" accept="image/png, image/jpeg">
                         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar Perfil</button></div>
                         <div class="mt-5 text-center"><a class="btn btn-primary profile-button" href="reset-password.php">Cambiar Contraseña</a></div>
