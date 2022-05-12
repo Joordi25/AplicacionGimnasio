@@ -83,7 +83,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
         </div>
         <div class="row" id="top">
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-0"></div>
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1" style="text-align: right;">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-0" style="text-align: right;">
                 <a href=""><img class="flecha" src="../src/images/reservas/flechaizquierda.png"></a>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
