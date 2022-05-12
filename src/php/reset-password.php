@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (mysqli_stmt_execute($stmt)) {
                 session_destroy();
-                header("location: LoginView.php");
+                header("location: /AplicacionGimnasio/Views/LoginView.php");
                 exit();
             } else {
                 echo "Algo salió mal, por favor vuelva a intentarlo.";
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h4 style="color: yellow;" class="text-right">Cambio de contraseña</h4>
                     </div>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
+                        <div style="margin-bottom: 15px;" class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
                             <label class="labels">Nueva contraseña</label>
                             <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
                             <span class="help-block"><?php echo $new_password_err; ?></span>
@@ -108,46 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
         </div>
-    </div>
-</body>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Cambia tu contraseña aquí</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="shortcut icon" href="../../images/icon.png" type="image/x-icon">
-    <style type="text/css">
-        body {
-            font: 14px sans-serif;
-        }
-
-        .wrapper {
-            width: 350px;
-            padding: 20px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="wrapper">
-        <h2>Cambia tu contraseña aquí</h2>
-        <p>Complete este formulario para restablecer su contraseña.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                <label>Nueva contraseña</label>
-                <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
-                <span class="help-block"><?php echo $new_password_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirmar contraseña</label>
-                <input type="password" name="confirm_password" class="form-control">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Enviar">
-                <a class="btn btn-link" href="perfil.php">Cancelar</a>
-            </div>
-        </form>
     </div>
 </body>
 
