@@ -20,7 +20,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 	<title>Productos</title>
 	<link rel="icon" href="../images/favicon.png">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link href="../../css/StyleProductos.css" rel="stylesheet">
 	<style>
 		.product_image {
@@ -51,7 +51,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 		</div>
 		<div class="col-md-1"></div>
 		<div class="col-md-1 top">
-			<a class="menu selected" href="../../../Views/index.php#">INICIO</a>
+			<a class="menu" href="../../../Views/index.php#">INICIO</a>
 		</div>
 		<div class="col-md-1 top">
 			<a class="menu" href="../../../Views/index.php#price">TARIFAS</a>
@@ -60,7 +60,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			<a class="menu" href="../../../src/php/cesta/inicio.php">MARKETPLACE</a>
 		</div>
 		<div class="col-md-1 top">
-			<a class="menu" href="../../../Views/contactoView.html">CONTACTO</a>
+			<a class="menu" href="../../../src/php/cesta/view_cart.php">CESTA</a>
 		</div>
 		<div class="col-md-2 top">
 			<a class="menu" href="../../../Views/index.php#">SOBRE NOSOTROS</a>
@@ -82,7 +82,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 					</ul>
 				</div>
 			<?php endif ?>
-			
+
 			<nav class="">
 				<?php if ((isset($_SESSION["loggedin"]))) : ?>
 					<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
@@ -133,30 +133,25 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 		?>
 			<div class="col-sm-3" style="margin-bottom: 15px;">
 				<div class="productos">
-					<div class="">
-						<div class="row">
-							<br>
-							<img src="<?php echo $row['photo'] ?>" height="260px">
+					<div class="row">
+						<br>
+						<img src="<?php echo $row['photo'] ?>" height="260px">
+					</div>
+					<br>
+					<div class="row">
+						<br>
+						<h4 class="nombreProducto"><?php echo $row['name']; ?><br> <br>
+							<p><b><?php echo $row['price'] . "€"; ?></b></p>
+						</h4>
+					</div>
+
+					<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
+						<br>
+						<div class="row product_footer"><span>
+							<a href="delete_pala.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
 						</div>
 						<br>
-						<div class="row">
-							<br>
-							<h4 class="nombreProducto"><?php echo $row['name']; ?><br> <br>
-							<p><b><?php echo $row['price'] . "€"; ?></b></p> 
-						</h4>
-							
-						</div>
-
-						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
-							<br>
-							<div class="row product_footer"><span>
-							
-							<a href="delete_pala.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
-							</div>
-							<br>
-						<?php endif ?>
-
-					</div>
+					<?php endif ?>
 				</div>
 			</div>
 		<?php
