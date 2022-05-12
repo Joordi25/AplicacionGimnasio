@@ -18,16 +18,16 @@ describe('Iniciar Sesión en la web', () => {
     it('Ir a la tienda y ecoger varios productos', () => {
 
         cy.get(':nth-child(5) > .menu').click({ force: true })
-        cy.get(':nth-child(1) > .panel > .panel-body > .product_footer > .pull-right > .btn').click()
-        cy.get(':nth-child(2) > .panel > .panel-body > .product_footer > .pull-right > .btn').click()
-        cy.get('li > a').click()
+        cy.get(':nth-child(1) > :nth-child(1) > .productos > .product_footer > .pull-right > .btn').click()
+        cy.get('#dropdownMenuButton1').click()
+        cy.get(':nth-child(2) > .dropdown-item').click()
         cy.get('[href="clear_cart.php"]').click()
         cy.wait(2000)
-        cy.get(':nth-child(1) > .panel > .panel-body > .product_footer > .pull-right > .btn').click()
-        cy.get(':nth-child(2) > .panel > .panel-body > .product_footer > .pull-right > .btn').click()
-        cy.get('li > a').click()
+        cy.get(':nth-child(2) > :nth-child(1) > .productos > .product_footer > .pull-right > .btn').click()
+        cy.get(':nth-child(3) > .productos > .product_footer > .pull-right > .btn').click()
+        cy.get('#dropdownMenuButton1').click()
+        cy.get(':nth-child(2) > .dropdown-item').click()
         cy.get('[href="compra/pagar.php"]').click()
-
         cy.get('.number').type('5351 2040 2043 1013')
         cy.get('.inputname').type('test test test')
         cy.get('.expire').type('1027')

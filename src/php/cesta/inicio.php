@@ -41,6 +41,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 		.hola {
 			padding-bottom: 15%;
 		}
+		
 	</style>
 </head>
 
