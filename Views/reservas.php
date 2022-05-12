@@ -37,7 +37,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <a class="menu" href="index.php">INICIO</a>
             </div>
             <div class="col-md-1 top">
-                <a class="menu selected" href="reservas.html">RESERVAS</a>
+                <a class="menu selected" href="reservas.php">RESERVAS</a>
             </div>
             <div class="col-md-1 top">
                 <a class="menu" href="../src/php/cesta/inicio.php">MARKETPLACE</a>
