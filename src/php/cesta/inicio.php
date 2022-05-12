@@ -55,7 +55,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			<a class="menu " href="../../../Views/index.php#">INICIO</a>
 		</div>
 		<div class="col-md-1 top">
-			<a class="menu" href="../../../Views/index.php#price">TARIFAS</a>
+			<a class="menu" href="../../../Views/reservas.html">RESERVAS</a>
 		</div>
 		<div class="col-md-1 top">
 			<a class="menu selected" href="../../../src/php/cesta/inicio.php">MARKETPLACE</a>
@@ -97,10 +97,10 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 		</div>
 		<?php if ((!isset($_SESSION["loggedin"]))) : ?>
 			<div class="col-md-1 top">
-				<a class="menu amarillo" href="../../../Views/RegisterView.php">REGISTRARSE</a>
+				<a class="menu" href="../../../Views/RegisterView.php">REGISTRARSE</a>
 			</div>
 			<div class="col-md-2 top">
-				<a class="menu" href="../../../Views/LoginView.php">INICIAR SESIÓN</a>
+				<a class="menu amarillo" href="../../../Views/LoginView.php">INICIAR SESIÓN</a>
 			</div>
 		<?php endif ?>
 

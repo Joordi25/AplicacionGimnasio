@@ -69,6 +69,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="shortcut icon" href="../../images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    <div class="container rounded mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 style="color: yellow;" class="text-right">Cambio de contraseña</h4>
+                    </div>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
+                            <label class="labels">Nueva contraseña</label>
+                            <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
+                            <span class="help-block"><?php echo $new_password_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                            <label class="labels">Confirmar contraseña</label>
+                            <input type="password" name="confirm_password" class="form-control">
+                            <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                        </div>
+                        <br> <br>
+                        <div class="mt-5 text-center"><input type="submit" class="btn btn-warning profile-button" value="Cambiar contraseña"></div>
+                        <div class="mt-5 text-center"><a style="color: yellow;" href="perfil.php">Atrás</a></div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<head>
+    <meta charset="UTF-8">
     <title>Cambia tu contraseña aquí</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="shortcut icon" href="../../images/icon.png" type="image/x-icon">

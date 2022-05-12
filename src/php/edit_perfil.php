@@ -74,7 +74,7 @@ $(document).on('change', '#'+searchInput, function () {
         <div class="container rounded mt-5 mb-5">
             <div class="row">
                 <div class="col-md-3 border-right">
-                <div class="mt-5 text-center"><a class="btn btn-primary profile-button" href="perfil.php">Cancelar</a></div>
+                <div class="mt-5 text-center"><a class="btn btn-danger profile-button" href="perfil.php">Cancelar</a></div>
                 </div>
                 <div class="col-md-5 border-right">
                     <div class="p-3 py-5">
@@ -94,8 +94,8 @@ $(document).on('change', '#'+searchInput, function () {
                         </div> <br> <br>
 
                         <input type="file" name="img" accept="image/png, image/jpeg">
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar Perfil</button></div>
-                        <div class="mt-5 text-center"><a class="btn btn-primary profile-button" href="reset-password.php">Cambiar Contraseña</a></div>
+                        <div class="mt-5 text-center"><button class="btn btn-warning profile-button" type="submit">Guardar Perfil</button></div>
+                        <div class="mt-5 text-center"><a style="color: yellow;" href="reset-password.php">Cambiar Contraseña</a></div>
                     </div>
                 </div>
                 <div class="col-md-1">
