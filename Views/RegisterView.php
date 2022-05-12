@@ -256,7 +256,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6">
                     <label for="num_tlf">Teléfono</label><br>
-                    <input class="form-control" max="1" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
+                    <input class="form-control" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
                 </div>
 
                 <div class="col-12 col-md-6">
