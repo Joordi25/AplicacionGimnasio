@@ -27,9 +27,6 @@ describe('Iniciar Sesión en la web', () => {
         cy.get('#iniciar').click()
 
 
-
-
-
     })
 
 
