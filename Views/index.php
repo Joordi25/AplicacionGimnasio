@@ -46,7 +46,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></span></a>
                 </div>
                 <div class="col-md-2 top">
-                    <a class="menu" href="#sobrenosotros">SOBRE NOSOTROS</a>
+                    <a class="menu" href="index.php">SOBRE NOSOTROS</a>
                 </div>  
 
 
@@ -96,7 +96,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a id="boton1" href="#instalaciones">EMPEZAR</a>
                 </div>
                 <div class="col-md-12 col-lg-2 col-sm-12 col-12">
-                    <a id="boton2" href="#sobrenosotros">SOBRE NOSOTROS</a>
+                    <a id="boton2" href="#price">Consulta nuestras Tarifas</a>
                 </div>
                 <div class="col-md-3"></div>
             </div>
@@ -120,7 +120,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     salas de sesiones grupales, constan de material de alta calidad, con el que podamos satisfacer todas las necesidades de nuestros clientes.
                     Si quieres visitar nuestro centro no dudes en contactarnos.
                 </p>
-                <a href="" id="instalacionesa">Conoce nuestras tarifas</a>
+                <a href="index.php" id="instalacionesa">Sobre nosotros</a>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-12 col-lg-6">
@@ -140,7 +140,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 y aconsejarte las mejores opciones y tips para tus entrenos. Tenemos una alta disponibilidad de stock de todos nuestros 
                 productos, así que no te preocupes por nada!. ¡Si quieres descubrir más acerca de nuestra tienda pincha aquí!.
                 </p>
-                <a href="" id="tiendaa">Ir a la Tienda</a>
+                <a href="../src/php/cesta/inicio.php" id="tiendaa">Ir a la Tienda</a>
             </div>
             <div class="col-md-1"></div>                    
         </div>

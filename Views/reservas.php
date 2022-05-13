@@ -24,7 +24,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 </head>
 
 <body onload="date()">
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-bottom: 5%;">
         <div class="row">
             <div class="col-md-1">
                 <img id="logo" src="../images/logotransparente.png" width="170" height="170">
