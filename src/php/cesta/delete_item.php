@@ -9,6 +9,6 @@
 	//rearrange array after unset
 	$_SESSION['qty_array'] = array_values($_SESSION['qty_array']);
 
-	$_SESSION['message'] = "Product deleted from cart";
+	$_SESSION['message'] = "Producto eliminado correctamente";
 	header('location: view_cart.php');
 ?>
