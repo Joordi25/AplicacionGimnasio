@@ -2,7 +2,6 @@ body {
     background-image: url("../images/carrito.jpg");
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgb(rgba(148, 144, 144, 0.5), green, blue);
 }
 
 .btnañadir {

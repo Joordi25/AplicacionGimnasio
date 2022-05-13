@@ -80,9 +80,9 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
 				?>
 				<form method="POST" action="save_cart.php">
-					<table class="table table-bordered table-striped" style="color: white; background-color: rgba(148, 144, 144, 0.5);">
+					<table class="table table-bordered table-striped" style="color: white; background-color: rgba(80, 79, 79, 0.7);">
 						<thead>
-							<th></th>
+							<th style="width: 10px;">Eliminar</th>
 							<th>Nombre</th>
 							<th>Precio</th>
 							<th>Cantidad</th>
@@ -104,15 +104,15 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 								$query = $conn->query($sql);
 								while ($row = $query->fetch_assoc()) {
 							?>
-									<tr>
+									<tr style="color: white;">
 										<td>
-											<a href="delete_item.php?id=<?php echo $row['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+											<a href="delete_item.php?id=<?php echo $row['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><b><span class="glyphicon glyphicon-trash">X</span></b></a>
 										</td>
-										<td><?php echo $row['name']; ?></td>
-										<td><?php echo number_format($row['price'], 2); ?></td>
+										<td style="color: white;"><?php echo $row['name']; ?></td>
+										<td style="color: white;"><?php echo number_format($row['price'], 2); ?></td>
 										<input type="hidden" name="indexes[]" value="<?php echo $index; ?>">
-										<td><?php echo $_SESSION['qty_array'][$index]; ?></td>
-										<td><?php echo number_format($_SESSION['qty_array'][$index] * $row['price'], 2); ?></td>
+										<td style="color: white;"><?php echo $_SESSION['qty_array'][$index]; ?></td>
+										<td style="color: white;"><?php echo number_format($_SESSION['qty_array'][$index] * $row['price'], 2); ?></td>
 										<?php $total += $_SESSION['qty_array'][$index] * $row['price']; ?>
 									</tr>
 								<?php
@@ -128,8 +128,8 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
 							?>
 							<tr>
-								<td colspan="4" align="right"><b>Total</b></td>
-								<td><b><?php echo number_format($total, 2); ?></b></td>
+								<td style="color: white;" colspan="4" text-align="right"><b>Total</b></td>
+								<td style="color: white;"><b><?php echo number_format($total, 2); ?></b></td>
 							</tr>
 						</tbody>
 					</table>
