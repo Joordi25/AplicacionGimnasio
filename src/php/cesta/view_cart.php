@@ -14,8 +14,6 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-</head>
 
 <body>
 	<div class="row">
@@ -33,7 +31,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			<a class="menu" href="inicio.php">MARKETPLACE</a>
 		</div>
 		<div class="col-md-1 top">
-			<a class="menu selected" href="view_cart.php">CESTA</a>
+			<a class="menu selected" href="view_cart.php">CESTA <span class="badge"><?php echo count($_SESSION['cart']); ?></a>
 		</div>
 		<div class="col-md-2 top">
 			<a class="menu" href="/AplicacionGimnasio/Views/index.php#">SOBRE NOSOTROS</a>
@@ -46,22 +44,22 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 						Hola, <?php echo $user; ?>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						<li><a class="dropdown-item" href="../src/php/perfil.php">Cuenta</a></li>
+						<li><a class="dropdown-item" href="/AplicacionGimnasio/src/php/perfil.php">Cuenta</a></li>
 						<?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
-							<a class="dropdown-item" href="../src/php/cesta/inicio_admin.php">Productos</a>
+							<a class="dropdown-item" href="/AplicacionGimnasio/src/php/cesta/inicio_admin.php">Productos</a>
 						<?php endif ?>
-						<li><a class="dropdown-item" href="../src/php/cesta/view_cart.php">Cesta</a></li>
-						<li><a class="dropdown-item" href="../src/php/cerrar.php">Cerrar sesión</a></li>
+						<li><a class="dropdown-item" href="/AplicacionGimnasio/src/php/cesta/view_cart.php">Cesta</a></li>
+						<li><a class="dropdown-item" href="/AplicacionGimnasio/src/php/cerrar.php">Cerrar sesión</a></li>
 					</ul>
 				</div>
 			<?php endif ?>
 		</div>
 		<?php if ((!isset($_SESSION["loggedin"]))) : ?>
 			<div class="col-md-1 top">
-				<a class="menu" href="RegisterView.php">REGISTRARSE</a>
+				<a class="menu" href="\AplicacionGimnasio\ViewsRegister\View.php">REGISTRARSE</a>
 			</div>
 			<div class="col-md-2 top">
-				<a class="menu amarillo" href="LoginView.php">INICIAR SESIÓN</a>
+				<a class="menu amarillo" href="\AplicacionGimnasio\Views\LoginView.php">INICIAR SESIÓN</a>
 			</div>
 		<?php endif ?>
 
