@@ -57,7 +57,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			<a class="menu" href="../../../Views/reservas.php">RESERVAS</a>
 		</div>
 		<div class="col-md-1 top">
-			<a class="menu" href="../../../src/php/cesta/inicio.php">MARKETPLACE</a>
+			<a class="menu" href="../../../src/php/cesta/inicio.php">TIENDA</a>
 		</div>
 		<div class="col-md-1 top">
 			<a class="menu" href="../../../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></a>
