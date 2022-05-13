@@ -46,7 +46,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <a class="menu" href="../src/php/cesta/view_cart.php">CESTA</a>
                 </div>
                 <div class="col-md-2 top">
-                    <a class="menu" href="#">SOBRE NOSOTROS</a>
+                    <a class="menu" href="#sobrenosotros">SOBRE NOSOTROS</a>
                 </div>  
 
                 <div class="col-md-1 top">
@@ -93,7 +93,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a id="boton1" href="#instalaciones">EMPEZAR</a>
                 </div>
                 <div class="col-md-12 col-lg-2 col-sm-12 col-12">
-                    <a id="boton2" href="">SOBRE NOSOTROS</a>
+                    <a id="boton2" href="#sobrenosotros">SOBRE NOSOTROS</a>
                 </div>
                 <div class="col-md-3"></div>
             </div>
@@ -129,7 +129,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <div class="col-md-12 col-lg-6">
                 <img id="tiendaimg" src="../images/main/tienda.jpg">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-12" id= "sobrenosotros">
                 <h1 id="tiendah1">Descubre nuestra tienda!</h1>
                 <p id="tiendap" class="text-justify">Si! También contamos con una tienda física y online, dentro de nuestras instalaciones y página.
                 Cabe decir que nuestra tienda que un material tanto deportivo como nutricional de alta calidad, ofreciendo una
@@ -201,99 +201,56 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             </div>
         </div>
     </div>
-    <footer class="footer text-center text-white">
-      <div class="container p-4">
-        <section class="">
-          <form action="">
-            <div class="row d-flex justify-content-center">
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Suscríbete a nuestro newsletter</strong>
-              </p>
+     <!-- Site footer -->
+     <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+              <p class="footer-links" >UBICACION</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.353206727546!2d2.214321015671053!3d41.40985080256472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a35081f71b9b%3A0xcf8bb581de6135b1!2sDiagonal%20Mar%20Centro%20Comercial!5e0!3m2!1ses!2ses!4v1652452895902!5m2!1ses!2ses" width="500" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <div class="col-md-5 col-12">
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example21" class="form-control" />
-              <label class="form-label" for="form5Example21">Email</label>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Contact</h6>
+            <ul class="footer-links">
+              <li><a href="">Telf: +34 93311350</a></li>
+              <li><a href="">Mail: zeussupport@gmail.com</a></li>
+              <li><a href="">Fotos</a></li>
+              <li><a href="#instalaciones">Instalaciones</a></li>
+              <li><a href="">Inicio</a></li>
+            </ul>
           </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#sobrenosotros">Sobre nosotros</a></li>
+              <li><a href="">Shop link</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <hr>
       </div>
-      <div class="col-auto">
-        <button type="submit" class="btn btn-outline-light mb-4">
-          Enviar
-      </button>
-  </div>
-</div>
-</form>
-</section>
-<section class="">
-  <div class="row">
-    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-      <h5 class="text-uppercase">Links</h5>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+         <a href="#">ZEUSPAGE</a>.
+            </p>
+          </div>
 
-      <ul class="list-unstyled mb-0">
-        <li>
-          <a href="#!" class="text-white">Link 1</a>
-      </li>
-      <li>
-          <a href="#!" class="text-white">Link 2</a>
-      </li>
-      <li>
-          <a href="#!" class="text-white">Link 3</a>
-      </li>
-  </ul>
-</div>
-<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-  <h5 class="text-uppercase">Links</h5>
-
-  <ul class="list-unstyled mb-0">
-    <li>
-      <a href="#!" class="text-white">Link 1</a>
-  </li>
-  <li>
-      <a href="#!" class="text-white">Link 2</a>
-  </li>
-  <li>
-      <a href="#!" class="text-white">Link 3</a>
-  </li>
-</ul>
-</div>
-<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-  <h5 class="text-uppercase">Links</h5>
-
-  <ul class="list-unstyled mb-0">
-    <li>
-      <a href="#!" class="text-white">Link 1</a>
-  </li>
-  <li>
-      <a href="#!" class="text-white">Link 2</a>
-  </li>
-  <li>
-      <a href="#!" class="text-white">Link 3</a>
-  </li>
-</ul>
-</div>
-<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-  <h5 class="text-uppercase">Links</h5>
-
-  <ul class="list-unstyled mb-0">
-    <li>
-      <a href="#!" class="text-white">Link 1</a>
-  </li>
-  <li>
-      <a href="#!" class="text-white">Link 2</a>
-  </li>
-  <li>
-      <a href="#!" class="text-white">Link 3</a>
-  </li>
-</ul>
-</div>
-</div>
-</section>
-</div>
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="#">GYMZEUS.com</a>
-</div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
 </footer>
 
 </body>
