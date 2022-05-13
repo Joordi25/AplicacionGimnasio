@@ -43,11 +43,14 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu" href="../src/php/cesta/inicio.php">MARKETPLACE</a>
                 </div>
                 <div class="col-md-1 top">
-                <a class="menu" href="../src/php/cesta/view_cart.php">CESTA</a>
+                <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></span></a>
                 </div>
                 <div class="col-md-2 top">
                     <a class="menu" href="#sobrenosotros">SOBRE NOSOTROS</a>
                 </div>  
+
+
+
 
                 <div class="col-md-1 top">
                     <?php if ((isset($_SESSION["loggedin"]))) : ?>

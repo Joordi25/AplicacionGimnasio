@@ -39,32 +39,7 @@ $imagen = ($row['foto']);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyBTE93_pfkiAdw9Ie3oRBQF1fFVql2iCOs"></script>
     <title>Perfil</title>
-    <script>
-        var searchInput = 'search_input';
-
-$(document).ready(function () {
-    var autocomplete;
-    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
-        types: ['geocode'],
-    });
-	
-    google.maps.event.addListener(autocomplete, 'place_changed', function () {
-        var near_place = autocomplete.getPlace();
-        document.getElementById('loc_lat').value = near_place.geometry.location.lat();
-        document.getElementById('loc_long').value = near_place.geometry.location.lng();
-		
-        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
-        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
-    });
-});
-
-$(document).on('change', '#'+searchInput, function () {
-    document.getElementById('latitude_input').value = '';
-    document.getElementById('longitude_input').value = '';
-	
-    document.getElementById('latitude_view').innerHTML = '';
-    document.getElementById('longitude_view').innerHTML = '';
-});
+    
     </script>
 </head>
 
@@ -87,10 +62,10 @@ $(document).on('change', '#'+searchInput, function () {
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12"><label class="labels">Numero de Telefono</label><input type="tel" maxlength="9" value="<?php echo $num; ?>" class="form-control" placeholder="Numero tlf" name="num_tlf"></div> <br>
-                            <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" value="<?php echo $direccion; ?>" placeholder="Direccion" name="direccion"></div>
+                            <div class="col-md-12"><label class="labels">Dirección</label><input type="text" class="form-control" value="<?php echo $direccion; ?>" autocomplete="off" placeholder="Direccion" id="search_input" name="direccion"></div>
                         </div>
-                        <div class="row mt-3">/AplicacionGimnasio/Views/index.php
-                            <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais" id="search_input"></div>
+                        <div class="row mt-3">
+                            <div class="col-md-6"><label class="labels">Pais</label><input type="text" class="form-control" value="<?php echo $pais; ?>" placeholder="Pais" name="pais"></div>
                         </div> <br> <br>
 
                         <input type="file" name="img" accept="image/png, image/jpeg">
@@ -109,5 +84,27 @@ $(document).on('change', '#'+searchInput, function () {
     </form>
     
 </body>
+
+<script> 
+var searchInput = 'search_input';
+
+$(document).ready(function () {
+    var autocomplete;
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+        types: ['geocode'],
+    });
+        
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var near_place = autocomplete.getPlace();
+        document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+        document.getElementById('loc_long').value = near_place.geometry.location.lng();
+                
+        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+    });
+});
+</script>
+
+
 
 </html>
