@@ -8,10 +8,7 @@ if (!isset($_SESSION['cart'])) {
 
 $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : 'registrate';
 
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
