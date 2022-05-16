@@ -145,7 +145,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             <div class="col-md-3 col-sm-12 col-xs-12 col-12" id="precios1">
                 <div class="preciosname">
-                    <h1 id="preciosh1">BASIC</h1>
+                    <h1 id="preciosh1">ESTUDIANTES</h1>
                     <div class="preciosprice">
                         <h2 id="preciosh2">40€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
