@@ -92,3 +92,10 @@ body {
   	bottom: 0;
 	position: fixed;
 }
+
+@media only screen and (max-width: 576px) {
+.flecha {
+	display: none!important;
+}
+
+}

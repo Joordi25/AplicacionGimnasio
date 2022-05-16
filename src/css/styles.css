@@ -465,6 +465,16 @@ body {
 }
 }
 
+@media only screen and (max-width: 1530px) {
+#boton2 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+}
+
 @media only screen and (max-width: 1497px) {
 
 	#scroll {
@@ -523,6 +533,17 @@ body {
 @media only screen and (max-width: 1258px) {
 #instalaciones {
 	margin-bottom: 7%;
+}
+
+}
+
+@media only screen and (max-width: 1228px) {
+body {
+	background-image: none;
+}
+
+header {
+	background-color: black;
 }
 
 }

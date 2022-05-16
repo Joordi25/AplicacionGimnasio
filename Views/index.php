@@ -42,7 +42,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <div class="col-md-1 top">
                     <a class="menu" href="../src/php/cesta/inicio.php">TIENDA</a>
                 </div>
-                <div class="col-md-1 top">
+                <div class="col-md-1 top cesta">
                 <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></span></a>
                 </div>
                 <div class="col-md-2 top">
@@ -92,7 +92,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <div class="col-md-12 col-lg-1 col-sm-12 col-12">
                     <a id="boton1" href="#instalaciones">EMPEZAR</a>
                 </div>
-                <div class="col-md-12 col-lg-2 col-sm-12 col-12">
+                <div class="col-md-12 col-lg-4 col-sm-12 col-12">
                     <a id="boton2" href="#price">Consulta nuestras Tarifas</a>
                 </div>
                 <div class="col-md-3"></div>
