@@ -228,7 +228,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <h6>Quick Links</h6>
             <ul class="footer-links">
               <li><a href="#sobrenosotros">Sobre nosotros</a></li>
-              <li><a href="">Shop link</a></li>
+              <li><a href="../src/php/cesta/inicio.php">Shop link</a></li>
               <li><a href="">Privacy Policy</a></li>
               
             </ul>
