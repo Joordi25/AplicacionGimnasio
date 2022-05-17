@@ -23,8 +23,8 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="container-fluid">
+<body onload="date()">
+    <div class="container-fluid" style="margin-bottom: 5%;">
         <div class="row">
             <div class="col-md-1">
                 <img id="logo" src="../images/logotransparente.png" width="170" height="170">
@@ -37,7 +37,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <a class="menu selected" href="reservas.php">RESERVAS</a>
             </div>
             <div class="col-md-1 top">
-                <a class="menu" href="../src/php/cesta/inicio.php">MARKETPLACE</a>
+                <a class="menu" href="../src/php/cesta/inicio.php">TIENDA</a>
             </div>
             <div class="col-md-1 top">
                 <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></a>
@@ -73,43 +73,38 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <?php endif ?>
 
         </div>
-        <div class="row">
-            <div class="col-12">
-                <h1 style="color: white;">Selecciona dia y hora para hacer la reserva</h1>
-            </div>
-        </div>
         <div class="row" id="top">
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-0"></div>
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-0" style="text-align: right;">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1" style="text-align: right;">
                 <a href=""><img class="flecha" src="../src/images/reservas/flechaizquierda.png"></a>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>LUNES</p>
-                <p>30/05/22</p>
+                <p id="diaactual">LUNES</p>
+                <p id="fechaactual">30/05/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>MARTES</p>
-                <p>31/05/22</p>
+                <p id="dia1">MARTES</p>
+                <p id="fechaactual1">31/05/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>MIÉRCOLES</p>
-                <p>01/06/22</p>
+                <p id="dia2">MIÉRCOLES</p>
+                <p id="fechaactual2">01/06/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>JUEVES</p>
-                <p>02/06/22</p>
+                <p id="dia3">JUEVES</p>
+                <p id="fechaactual3">02/06/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>VIERNES</p>
-                <p>03/06/22</p>
+                <p id="dia4">VIERNES</p>
+                <p id="fechaactual4">03/06/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>SÁBADO</p>
-                <p>04/06/22</p>
+                <p id="dia5">SÁBADO</p>
+                <p id="fechaactual5">04/06/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 fecha">
-                <p>DOMINGO</p>
-                <p>05/06/22</p>
+                <p id="dia6">DOMINGO</p>
+                <p id="fechaactual6">05/06/22</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
                 <a href=""><img class="flecha" style="text-align: left;" src="../src/images/reservas/flechaderecha.png"></a>
@@ -122,25 +117,25 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>13:00</p>
+                <p>08:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
             </div>
@@ -152,25 +147,25 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>13:30</p>
+                <p>09:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
             </div>
@@ -182,25 +177,25 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>14:00</p>
+                <p>10:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
             </div>
@@ -212,25 +207,25 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>14:30</p>
+                <p>11:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
             </div>
@@ -242,25 +237,25 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>15:00</p>
+                <p>12:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
             </div>
@@ -272,30 +267,30 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaslibres">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 horaspilladas">
-                <p>15:30</p>
+                <p>13:00</p>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
             </div>
         </div>
     </div>
 </body>
-
+<script type="text/javascript" src="../src/JavaScript/reservas.js"></script>
 </html>

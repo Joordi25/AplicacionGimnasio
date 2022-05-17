@@ -58,7 +58,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 			<a class="menu" href="../../../Views/reservas.php">RESERVAS</a>
 		</div>
 		<div class="col-md-1 top">
-			<a class="menu selected" href="../../../src/php/cesta/inicio.php">MARKETPLACE</a>
+			<a class="menu selected" href="../../../src/php/cesta/inicio.php">TIENDA</a>
 		</div>
 		<div class="col-md-1 top">
 			<a class="menu" href="../../../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></a>
@@ -110,7 +110,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 		//info message
 		if (isset($_SESSION['message'])) {
 		?>
-			<div class="row">
+			<div class="row" style="margin-left: 32%;">
 				<div class="col-sm-6 col-sm-offset-6">
 					<div class="alert alert-info text-center">
 						<?php echo $_SESSION['message']; ?>

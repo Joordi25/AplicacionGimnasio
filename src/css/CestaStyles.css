@@ -1,0 +1,68 @@
+body {
+    background-image: url("../images/carrito.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.btnañadir {
+    border-style: solid;
+    border-color: yellow;
+    color: yellow;
+}
+
+.productos {
+    background-color: rgba(190, 190, 190, 0.466);
+    border-style: solid;
+    border-color: black;
+}
+
+.nombreProducto {
+    color: white;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.amarillo {
+    color: yellow!important;
+}
+
+#logo {
+    border: solid 2px;
+    border-color: yellow;
+    margin-top: 15px;
+}
+
+.menu {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    margin-top: 10%!important;
+}
+
+.menu:hover {
+    color: yellow;
+}
+
+.selected {
+    border: solid 2px;
+    border-color: yellow;
+}
+
+.top {
+    margin-top: 1.5% !important;
+    height: 10%!important;
+}
+
+#up {
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
