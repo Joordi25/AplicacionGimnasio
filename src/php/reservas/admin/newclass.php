@@ -1,12 +1,11 @@
-
-
 <!DOCTYPE html>
 <html lang="">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Boat Reservation</title>
+		<title>Añadir Clase</title>
+		<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -39,7 +38,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<img src="../img/boatlogo.png" height="50" width="50"> &nbsp;
+						<img src="../../../images/Logo.png" height="50" width="50"> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -95,13 +94,13 @@
 							$bON = $_POST['bON'];
 
 							$bPrice = null;
-							if($bC == '15 Persons'){
-								$bPrice = 3000;
-							}else if($bC == '25 Persons'){
-								$bPrice = 3500;
+							if($bC == '15 Personas'){
+								$bPrice = 30;
+							}else if($bC == '25 Personas'){
+								$bPrice = 35;
 							}else{
-								$bPrice = 4000;
-							}//end if else of bc price
+								$bPrice = 40;
+							}
 
 							$sql = "INSERT INTO boats (b_name, b_cpcty, b_on, b_img, b_price)
 									VALUES(?,?,?,?,?);

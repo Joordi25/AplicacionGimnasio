@@ -10,7 +10,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Boat Reservation</title>
+		<title>Editar Clase</title>
+		<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -43,21 +44,21 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<img src="../img/boatlogo.png" height="50" width="50"> &nbsp;
+						<img src="../../../images/Logo.png" height="50" width="50"> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Boat Reservation</a></li>
+							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Centro de Reservas</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
 							<li class="active">
-								<a href="index.php">Boats</a>
+								<a href="index.php">Clases</a>
 							</li>
 							<li>
-								<a href="reservation.php">Reservation</a>
+								<a href="reservation.php">Reservas</a>
 							</li>
 						</ul>
 						
@@ -81,7 +82,7 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<a href="index.php" class="btn btn-success">
-					Back
+					Atrás
 					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 				</a>
 			<br />
@@ -107,7 +108,7 @@
 
 								 //update boat
 
-								 if(isset($_POST['updateboat']))
+								 if(isset($_POST['updateboats']))
 								 	{
 								 		$editid = $_POST['editid'];
 
@@ -118,9 +119,9 @@
 
 								 		
 										$bPrice = null;
-										if($bcpcty == '15 Persons'){
+										if($bcpcty == '15 Personas'){
 											$bPrice = 3000;
-										}else if($bcpcty == '25 Persons'){
+										}else if($bcpcty == '25 Personas'){
 											$bPrice = 3500;
 										}else{
 											$bPrice = 4000;
@@ -158,18 +159,18 @@
 						?>
 
 					   <div class="form-group">
-					    <label for="inputdefault">Boat Name:</label>
+					    <label for="inputdefault">Nombre:</label>
 					    <input class="form-control" id="inputdefault"  name="editid" type="hidden" value ="<?php echo $editid; ?>">
 					    <input class="form-control" id="inputdefault"  name="bN" type="text" value ="<?php echo $bname; ?>">
 					  </div>
 
 					  <div class="form-group">
-					    <label for="inputdefault">Boat Operator Name:</label>
+					    <label for="inputdefault">Instructor:</label>
 					    <input class="form-control" id="inputdefault" name="bON" type="text" value ="<?php echo $bon; ?>">
 					  </div>
 
 					  <div class="form-group">
-					    <label for="inputdefault">Boat Capacity:</label><br />
+					    <label for="inputdefault">Capacidad:</label><br />
 					    <select name = "bC" class = "btn-lg" style = "width:250px;">
 					    	<option <?php if($bcpcty == '15 Persons'){echo 'selected';} ?> value = "15 Persons">15 Persons</option>
 					    	<option <?php if($bcpcty == '25 Persons'){echo 'selected';} ?> value = "25 Persons">25 Persons</option>
@@ -180,12 +181,12 @@
 					  <input type="hidden" name="oldbimg" value="<?php echo $getoldbimg; ?>">
 
 					   <div class="form-group">
-				    	  <label for="inputdefault">Boat Picture:</label>
+				    	  <label for="inputdefault">Imagen:</label>
 					      <input class="form-control" id="inputdefault" name="bimg" type="file">
 					    </div>
 
 					  <button class="btn btn-info" name = "updateboat">
-					  		Save
+					  		Actualizar
 					  		<span class="glyphicon glyphicon-save" aria-hidden="true"></span>
 					  </button>
 				</form>	

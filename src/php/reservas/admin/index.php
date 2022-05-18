@@ -11,7 +11,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Boat Reservation</title>
+		<title>Clases</title>
+		<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -56,11 +57,11 @@
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
-							<li>
-								<a href="index.php">Inicio</a>
+							<li class="active">
+								<a href="index.php">Clases</a>
 							</li>
-							<li  class="active">
-								<a href="myreservation.php">Mis Reservas</a>
+							<li>
+								<a href="reservation.php">Reservas</a>
 							</li>
 						</ul>
 						
@@ -81,91 +82,73 @@
 		<br />
 		
 		<!-- main cntent -->
-		
-		
- <div class="container">
-			
+		<?php 
+				//para delete
+				if(isset($_GET['delid']))
+					{
+						$bid = $_GET['delid'];
+						$sql = "DELETE FROM boats WHERE b_id = ? ";
+						$res = $db->deleteRow($sql,[$bid]);
+
+						$bimg = $_GET['bimg'];
+						if($bimg != '../class_image/'.'default.png'){
+							unlink($bimg);
+						}
+						//header('Location: index.php'$bimg.'.jpg'
+					}
+			?>
+
+
+		 <div class="container">
+			<a href="newclass.php" class="btn btn-success">
+				Añadir
+				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+			</a>
 			<br />
 			<br />
 
-			<?php
-		// delete reserved
-			if(isset($_GET['delr_id']))
-				{
-					$delrid = $_GET['delr_id'];
-					$tid = $_SESSION['tourID'];
-
-					$sql = "DELETE FROM reservation WHERE tour_id = ? AND r_id = ?";
-					$res = $db->deleteRow($sql, [$tid, $delrid]);
-
-						echo '
-								<div class="alert alert-success">
-								  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-								  <strong>Success!</strong> Cancel Reservation Successfully.
-								</div>
-							';
-							// header('Location: myreservation.php');
-				}
-		 ?>
-
-		 <br />
 		 	 <table id="myTable" class="table table-striped" >  
 				<thead>
-					<th><center>IMAGEN</center></th>
-					<th>NOMBRE</th>
+					<th>CLASE</th>
+					<th>CAPACIDAD</th>
 					<th>INSTRUCTOR</th>
-					<th>COMENTARIO</th>
-					<th>FECHA</th>
-					<th>HORA</th>
+					<th><center>IMAGEN</center></th>
 					<th>PRECIO</th>
-					<th><center>ACTION</center></th>
+					<th><center>ACCIÓN</center></th>
 				</thead>
 				<tbody>
 					<?php 
-			$tid = $_SESSION['tourID'];
-			$sql = "SELECT * FROM reservation r INNER JOIN boats b ON b.b_id = r.b_id
-			INNER JOIN tourist t ON t.tour_id = r.tour_id
-			WHERE t.tour_id = ? ";
-			$res = $db->getRows($sql, [$tid]);
 
-			// echo print_r($res);
+						$sql = "SELECT * FROM boats ORDER BY b_name";
+						$res = $db->getRows($sql);
+						foreach ($res as $row) {
+							$bid = $row['b_id'];
+							$bn = $row['b_name'];
+							$bcpcty = $row['b_cpcty'];
+							$bon = $row['b_on'];
+							$bimg = $row['b_img'];
+							$bPrice = $row['b_price'];
+						
 
-			foreach ($res as  $r) {
-
-				$r_id = $r['r_id'];
-				$img = $r['b_img'];
-				$bn = $r['b_name'];
-				$bon = $r['b_on'];
-				$dstntn = $r['r_dstntn'];
-				$bprice = $r['b_price'];
-				$rdate = $r['r_date'];
-				$rhr = $r['r_hr'];
-				$rampm = $r['r_ampm'];
-
-				$oras = $rhr.' '.$rampm;
-		?>
+					?>
 					<tr>
-						<td class="align-img"><center><img src="<?php echo $img; ?>" width="50" height="50"></center></td>
 						<td class="align-img"><?php echo $bn; ?></td>
+						<td class="align-img"><?php echo $bcpcty; ?></td>
 						<td class="align-img"><?php echo $bon; ?></td>
-						<td class="align-img"><?php echo $dstntn; ?></td>
-						<td class="align-img"><?php echo $rdate; ?></td>
-						<td class="align-img"><?php echo $oras; ?></td>
-						<td class="align-img"><?php echo 'Php '.number_format($bprice, 2); ?></td>
+						<td class="align-img"><center><img src="<?php echo $bimg; ?>" width="50" height="50"></center></td>
+						<td class="align-img"><?php echo 'Php '.number_format($bPrice, 2); ?></td>
 						<td class="align-img">
-							<a class = "btn btn-danger  btn-xs" href="myreservation.php?delr_id=<?php echo $r_id; ?>">
-								Cancelar
-								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							<a class = "btn btn-success btn-xs" href="classupdate.php?editid=<?php echo $bid; ?>">
+								Editar
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+							</a>
+							<a class = "btn btn-danger  btn-xs" href="index.php?delid=<?php echo $bid; ?>&bimg=<?php echo $bimg; ?>">
+								Eliminar
+								<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 							</a>
 						</td>
 					</tr>
-					<?php
-			}//end foreach loop of display all resevdbation
-
-
-		?>
-
-
+					<?php } ?>
 
 				</tbody>
 			</table>
@@ -191,23 +174,6 @@ $(document).ready(function(){
     $('#myTable').dataTable();
 });
     </script>
-
-
-		
-		<!-- main cntent -->
-
-	</body>
- 		<script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
- 		<script src="../bootstrap/js/dataTables.js"></script>
- 		<script src="../bootstrap/js/dataTables2.js"></script>
- 		<script src="../bootstrap/js/bootstrap.js"></script>
- 		    <!--pagination-->
-    <link rel="stylesheet" href="../bootstrap/css/jquery.dataTables.css"><!--searh box positioning-->
-    <script src="../bootstrap/js/jquery.dataTables2.js"></script>
-
-
-
-
 
 
 </html>
