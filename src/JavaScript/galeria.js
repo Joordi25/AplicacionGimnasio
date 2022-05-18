@@ -40,7 +40,7 @@ function ampliar1() {
 }
 
 function ampliar2() {
-	document.getElementById("ampliado").src = "../src/images/galeria/boxed-water-is-better-P4AIjQw1BuY-unsplash.jpg";
+	document.getElementById("ampliado").src = "../src/images/galeria/atenea.jpg";
 	document.getElementById("oculto").style.display = "block";
 	document.getElementById("galeria").style.display = "none";
 }
@@ -58,7 +58,7 @@ function ampliar4() {
 }
 
 function ampliar5() {
-	document.getElementById("ampliado").src = "../src/images/galeria/gina-lin-m27OTMegUyA-unsplash.jpg";
+	document.getElementById("ampliado").src = "../src/images/galeria/MicrosoftTeams-image.png";
 	document.getElementById("oculto").style.display = "block";
 	document.getElementById("galeria").style.display = "none";
 }
@@ -70,7 +70,7 @@ function ampliar6() {
 }
 
 function ampliar7() {
-	document.getElementById("ampliado").src = "../src/images/galeria/jelmer-assink-gzeTjGu3b_k-unsplash.jpg";
+	document.getElementById("ampliado").src = "../src/images/galeria/afrodita.jpg";
 	document.getElementById("oculto").style.display = "block";
 	document.getElementById("galeria").style.display = "none";
 }
