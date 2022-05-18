@@ -45,15 +45,15 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Boat Reservation</a></li>
+							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Nombre de la clase</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
 							<li class="active">
-								<a href="index.php">Boats</a>
+								<a href="index.php">Clases</a>
 							</li>
 							<li>
-								<a href="reservation.php">Reservation</a>
+								<a href="reservation.php">Reservas</a>
 							</li>
 						</ul>
 						
@@ -77,7 +77,7 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<a href="index.php" class="btn btn-success">
-					Back
+					Atrás
 					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 				</a>
 			<br />
@@ -126,12 +126,12 @@
 
 								$new_image_name = 'image_' . date('Y-m-d-H-i-s') . '_' . uniqid() . '.jpg';
 								// do some checks to make sure the file you have is an image and if you can trust it
-								move_uploaded_file($_FILES["bP"]["tmp_name"], "../boat_image/".$new_image_name);
-								$new_image_name = '../boat_image/'.$new_image_name;
+								move_uploaded_file($_FILES["bP"]["tmp_name"], "../class_image/".$new_image_name);
+								$new_image_name = '../class_image/'.$new_image_name;
 								//echo $new_image_name;
 
 								if(empty($_FILES["bP"]["tmp_name"])){
-									$new_image_name = '../boat_image/'.'default.png'; 
+									$new_image_name = '../class_image/'.'default.png'; 
 								}
 
 								$res = $db->insertRow($sql, [$bN,$bC,$bON, $new_image_name, $bPrice]);
@@ -153,17 +153,17 @@
 				<form action = "" method = "POST" enctype="multipart/form-data">
 
 					   <div class="form-group">
-					    <label for="inputdefault">Boat Name:</label>
+					    <label for="inputdefault">Nombre de la clase:</label>
 					    <input class="form-control" id="inputdefault"  name="bN" type="text">
 					  </div>
 
 					  <div class="form-group">
-					    <label for="inputdefault">Boat Operator Name:</label>
+					    <label for="inputdefault">Instructor:</label>
 					    <input class="form-control" id="inputdefault" name="bON" type="text">
 					  </div>
 
 					  <div class="form-group">
-					    <label for="inputdefault">Boat Capacity:</label><br />
+					    <label for="inputdefault">Capacidad de la clase:</label><br />
 					    <select name = "bC" class = "btn-lg" style = "width:250px;">
 					    	<option value = "15 Persons">15 Persons</option>
 					    	<option value = "25 Persons">25 Persons</option>
@@ -172,12 +172,12 @@
 					  </div>
 
 					    <div class="form-group">
-				    	  <label for="inputdefault">Boat Picture:</label>
+				    	  <label for="inputdefault">Foto de la clase:</label>
 					      <input class="form-control" id="inputdefault" name="bP" type="file">
 					    </div>
 
 					  <button class="btn btn-info" name = "newboat">
-					  		Save
+					  		Añadir
 					  		<span class="glyphicon glyphicon-save" aria-hidden="true"></span>
 					  </button>
 				</form>	

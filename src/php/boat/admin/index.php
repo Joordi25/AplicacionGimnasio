@@ -11,7 +11,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Boat Reservation</title>
+		<title>Clases</title>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -46,21 +46,21 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<img src="../img/boatlogo.png" height="50" width="50"> &nbsp;
+						<img src="../../../images/Logo.png" height="50" width="50"> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Boat Reservation</a></li>
+							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Centro de Reservas</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
 							<li class="active">
-								<a href="index.php">Boats</a>
+								<a href="index.php">Clases</a>
 							</li>
 							<li>
-								<a href="reservation.php">Reservation</a>
+								<a href="reservation.php">Reservas</a>
 							</li>
 						</ul>
 						
@@ -90,7 +90,7 @@
 						$res = $db->deleteRow($sql,[$bid]);
 
 						$bimg = $_GET['bimg'];
-						if($bimg != '../boat_image/'.'default.png'){
+						if($bimg != '../class_image/'.'default.png'){
 							unlink($bimg);
 						}
 						//header('Location: index.php'$bimg.'.jpg'
@@ -100,7 +100,7 @@
 
 		 <div class="container">
 			<a href="newboat.php" class="btn btn-success">
-				New
+				Añadir
 				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 			</a>
 			<br />
@@ -108,12 +108,12 @@
 
 		 	 <table id="myTable" class="table table-striped" >  
 				<thead>
-					<th>BOAT NAME</th>
-					<th>BOAT CAPACITY</th>
-					<th>BOAT OPERATOR NAME</th>
-					<th><center>BOAT IMAGE</center></th>
-					<th>PRICE</th>
-					<th><center>ACTION</center></th>
+					<th>CLASE</th>
+					<th>CAPACIDAD</th>
+					<th>INSTRUCTOR</th>
+					<th><center>IMAGEN</center></th>
+					<th>PRECIO</th>
+					<th><center>ACCIÓN</center></th>
 				</thead>
 				<tbody>
 					<?php 

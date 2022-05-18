@@ -39,21 +39,21 @@ $db = new Database();
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<img src="../img/boatlogo.png" height="50" width="50"> &nbsp;
+						<img src="../../../images/Logo.png" height="50" width="50"> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Boat Reservation</a></li>
+							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Centro de Reservas</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
 							<li class="active">
-								<a href="index.php">Home</a>
+								<a href="index.php">Inicio</a>
 							</li>
 							<li>
-								<a href="myreservation.php">My Reservation</a>
+								<a href="myreservation.php">Mis Reservas</a>
 							</li>
 						</ul>
 						
@@ -80,7 +80,7 @@ $db = new Database();
 	<div class="container-fluid">
 			
 		<div class="panel panel-info">
-		  <div class="panel-heading">List of Boats Available</div>
+		  <div class="panel-heading">Lista de clases disponibles</div>
 		  <div class="panel-body">
 		  		<?php 
 		  			$sql = 'SELECT * FROM boats ORDER by b_name';
@@ -115,18 +115,18 @@ $db = new Database();
 						      			</div>
 						      			<div class="col-md-6">
 						      				<form>
-						      					<strong>Boat Name: </strong><?php echo $bName; ?><br />
-							      				<strong>Capacity: </strong><?php echo $bCap; ?><br />
-							      				<strong>Price: </strong><?php echo 'Php '.number_format($bPrice, 2); ?><br />
-							      				<strong>Operator Name: </strong><?php echo $bON; ?> <br />
-							      				<strong>Destination: </strong> <br />
+						      					<strong>Clase: </strong><?php echo $bName; ?><br />
+							      				<strong>Capacidad: </strong><?php echo $bCap; ?><br />
+							      				<strong>Precio: </strong><?php echo 'Php '.number_format($bPrice, 2); ?><br />
+							      				<strong>Instructor: </strong><?php echo $bON; ?> <br />
+							      				<strong>Comentario: </strong> <br />
 							      				<input type = "text" id="dstntn<?php echo $b_id; ?>" >
 							      				<br />
-										   		<strong>Date: </strong>&nbsp;
+										   		<strong>Fecha: </strong>&nbsp;
 							      				<br /> 
 										    	<input class="btn-default" id="rdate<?php echo $b_id; ?>" size="30" name="rdate" type="date" autocomplete="off">
 										    	<br />
-										    	<strong>Time Departure: </strong>
+										    	<strong>Hora: </strong>
 										    	<br />
 										    	<select class="btn-default" id="hr">
 										    		<?php 
@@ -149,10 +149,10 @@ $db = new Database();
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">
-						        	Close
+						        	Cerrar
 						        	<span class="glyphicon glyphicon-remove-sign"></span>
 						        </button>
-						        <input type="submit" value="Reserved" onclick="bogkot('<?php echo $b_id; ?>')" class="btn btn-success" data-dismiss="modal">
+						        <input type="submit" value="Reservar" onclick="bogkot('<?php echo $b_id; ?>')" class="btn btn-success" data-dismiss="modal">
 						      </div>
 						    </div>
 

@@ -11,7 +11,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Boat Reservation</title>
+		<title>Reservas</title>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -46,21 +46,21 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<img src="../img/boatlogo.png" height="50" width="50"> &nbsp;
+						<img src="../../../../images/logo.png" height="50" width="50"> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Boat Reservation</a></li>
+							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Centro de Reservas</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
 							<li>
-								<a href="index.php">Boats</a>
+								<a href="index.php">Clases</a>
 							</li>
 							<li  class="active">
-								<a href="myreservation.php">My Reservation</a>
+								<a href="myreservation.php">Reservas</a>
 							</li>
 						</ul>
 						
@@ -92,16 +92,16 @@
 		 <br />
 		 	 <table id="myTable" class="table table-striped" >  
 				<thead>
-					<th>TOURIST</th>
-					<th>CONTACT</th>
-					<th>ADDRESS</th>
-					<th><center>IMAGE</center></th>
-					<th>BOAT NAME</th>
-					<th>OPERATOR NAME</th>
-					<th>DESTINATION</th>
-					<th>DATE</th>
-					<th>TIME</th>
-					<th>PRICE</th>
+					<th>NOMBRE</th>
+					<th>TELÉFONO</th>
+					<th>DIRECCIÓN</th>
+					<th><center>IMAGEN</center></th>
+					<th>CLASE</th>
+					<th>INSTRUCTOR</th>
+					<th>COMENTARIO</th>
+					<th>FECHA</th>
+					<th>HORA</th>
+					<th>PRECIO</th>
 				</thead>
 				<tbody>
 					<?php 

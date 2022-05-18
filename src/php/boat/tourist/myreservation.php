@@ -46,21 +46,21 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<img src="../img/boatlogo.png" height="50" width="50"> &nbsp;
+						<img src="../../../images/Logo.png" height="50" width="50"> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Boat Reservation</a></li>
+							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Centro de Reservas</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
 							<li>
-								<a href="index.php">Boats</a>
+								<a href="index.php">Inicio</a>
 							</li>
 							<li  class="active">
-								<a href="myreservation.php">My Reservation</a>
+								<a href="myreservation.php">Mis Reservas</a>
 							</li>
 						</ul>
 						
@@ -111,13 +111,13 @@
 		 <br />
 		 	 <table id="myTable" class="table table-striped" >  
 				<thead>
-					<th><center>BOAT IMAGE</center></th>
-					<th>BOAT NAME</th>
-					<th>BOAT OPERATOR NAME</th>
-					<th>DESTINATION</th>
-					<th>DATE</th>
-					<th>TIME</th>
-					<th>PRICE</th>
+					<th><center>IMAGEN</center></th>
+					<th>NOMBRE</th>
+					<th>INSTRUCTOR</th>
+					<th>COMENTARIO</th>
+					<th>FECHA</th>
+					<th>HORA</th>
+					<th>PRECIO</th>
 					<th><center>ACTION</center></th>
 				</thead>
 				<tbody>
@@ -154,7 +154,7 @@
 						<td class="align-img"><?php echo 'Php '.number_format($bprice, 2); ?></td>
 						<td class="align-img">
 							<a class = "btn btn-danger  btn-xs" href="myreservation.php?delr_id=<?php echo $r_id; ?>">
-								Cancel
+								Cancelar
 								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 							</a>
 						</td>
