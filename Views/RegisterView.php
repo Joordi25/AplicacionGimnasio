@@ -182,7 +182,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$username', '$hashed_password', '$Correo', '$direccion', '$nombre', '$apellidos', '$num_tlf', '$pais', '$fecha', '$imagen')";
 
 
+        $sql2 = "INSERT INTO tourist (tour_fN, tour_mN, tour_lN, tour_address, tour_contact, tour_un, tour_up, user_type)
+                 VALUES ('$nombre', '$apellidos', '$apellidos', '$direccion', '$num_tlf', '$username', '$hashed_password', 2)";
 
+
+
+        if (mysqli_query($link, $sql2)) {
+
+            $_SESSION["loggedin"] = true;
+            $_SESSION["username"] = $username;
+
+
+
+            header("location: index.php");
+        } else {
+            echo "Error: " . $sql2 . "<br>" . mysqli_error($link);
+        }
+        
+        
         if (mysqli_query($link, $sql)) {
 
             $_SESSION["loggedin"] = true;

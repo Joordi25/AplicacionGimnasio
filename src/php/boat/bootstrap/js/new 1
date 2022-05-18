@@ -1,0 +1,48 @@
+ <script language="JavaScript">
+	function sel(source)
+		{
+			checkboxes = document.getElementsByName('check[]');
+			for(var i in checkboxes)
+			checkboxes[i].checked = source.checked;
+		}
+</script>
+
+// select all
+
+			<th width="3%"><input type="checkbox" onClick="return sel(this);"/><br /><span style="font-size:10px;">(All)</span></th>
+//tag sa select
+								<td><input type="checkbox" name="check[]" value="<?php echo $row['e_Id']; ?>" id="all" /></td>
+
+								
+							//query
+							
+	<?php
+		if(isset($_POST['select_to_dstrbt'])&&isset($_POST['check']))
+			{
+				$check = $_POST['check'];
+				$count = count($check);
+				for($i = 0; $i <$count; $i++)
+					{
+						$insert_ID = $check[$i]; 
+							
+							
+
+							mysql_query("UPDATE equipment SET e_cndtns='Approval', d_date = '$new' WHERE e_Id='$insert_ID'");
+							
+							$gigutom_nako_ala_pako_pamahaw = "
+																INSERT INTO rcvd (e_Id)
+																VALUES ('$insert_ID')
+															 ";
+							mysql_query($gigutom_nako_ala_pako_pamahaw)	;	
+							
+							//mysql_query("UPDATE equipment SET e_cndtns='Approval' WHERE e_Id='$insert_ID'");
+							
+							
+							//header("Location: home_select.php");
+							//echo '<meta http-equiv="refresh" content="1; URL=../receipt.php">';
+							echo '<meta http-equiv="refresh" content="1">';
+
+							
+					}
+			}
+?>
