@@ -57,7 +57,25 @@ body {
 }
 
 .images {
-	height: 200px;
-	width: 320px;
+	height: 300px;
+	width: 420px;
 	margin-right: 5%;
+}
+
+.images:hover {
+	height: 310px;
+	width: 440px;
+	margin-right: 5%;
+	transition: width 0.5s, height 0.5s;
+}
+
+#ampliado {
+	height: 700px;
+	width: 1100px;
+	border: 7px double yellow;
+}
+
+#oculto {
+	text-align: center;
+	display: none;
 }
