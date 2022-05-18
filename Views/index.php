@@ -46,7 +46,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></span></a>
                 </div>
                 <div class="col-md-2 top">
-                    <a class="menu" href="galeria.php">SOBRE NOSOTROS</a>
+                    <a class="menu" href="\AplicacionGimnasio\Views\galeria.php">SOBRE NOSOTROS</a>
                 </div>
 
                 <div class="col-md-1 top">
@@ -117,7 +117,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     salas de sesiones grupales, constan de material de alta calidad, con el que podamos satisfacer todas las necesidades de nuestros clientes.
                     Si quieres visitar nuestro centro no dudes en contactarnos.
                 </p>
-                <a href="index.php" id="instalacionesa">Sobre nosotros</a>
+                <a href="\AplicacionGimnasio\Views\galeria.php" id="instalacionesa">Sobre nosotros</a>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-12 col-lg-6">
@@ -215,7 +215,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <ul class="footer-links">
               <li><a href="">Telf: +34 93311350</a></li>
               <li><a href="">Mail: zeussupport@gmail.com</a></li>
-              <li><a href="">Fotos</a></li>
+              <li><a href="galeria.php">Fotos</a></li>
               <li><a href="#instalaciones">Instalaciones</a></li>
               <li><a href="">Inicio</a></li>
             </ul>

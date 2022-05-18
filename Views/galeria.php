@@ -17,7 +17,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Galería</title>    
+    <title>Sobre nosotros</title>    
     <link rel="stylesheet" href="../src/css/galeriastyles.css">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -41,7 +41,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu" href="../src/php/cesta/inicio.php">TIENDA</a>
                 </div>
                 <div class="col-md-1 top cesta">
-                <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></span></a>
+                    <a class="menu" href="../src/php/cesta/view_cart.php">CESTA<span class="badge"><?php echo count($_SESSION['cart']); ?></span></a>
                 </div>
                 <div class="col-md-2 top">
                     <a class="menu selected" href="galeria.php">SOBRE NOSOTROS</a>
@@ -56,7 +56,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="../src/php/perfil.php">Cuenta</a></li>
                                 <?php if ((isset($_SESSION["loggedin"])) && $user == "admin") : ?>
-                                <a class="dropdown-item" href="../src/php/cesta/inicio_admin.php">Productos</a>
+                                    <a class="dropdown-item" href="../src/php/cesta/inicio_admin.php">Productos</a>
                                 <?php endif ?>
                                 <li><a class="dropdown-item" href="../src/php/cesta/view_cart.php">Cesta</a></li>
                                 <li><a class="dropdown-item" href="../src/php/cerrar.php">Cerrar sesión</a></li>
@@ -74,53 +74,61 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <?php endif ?>
 
             </div>
-        
+
         </header>
-        <div class="row">
-            <div class="col-12 titulo">
-                <h1>GALERÍA</h1>
+        <div class="row" id="oculto">
+            <div class="col-12" onclick="volver()">
+                <img id="ampliado" src="../src/images/galeria/alexander-redl-qo1pyCD02t4-unsplash.jpg">
             </div>
         </div>
-        <div class="row" style="margin-bottom: 5%;">
-            <div class="col-2"></div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/alexander-redl-qo1pyCD02t4-unsplash.jpg">
+        <div id="galeria">
+            <div class="row">
+                <div class="col-12 titulo">
+                    <h1>GALERÍA</h1>
+                </div>
             </div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/boxed-water-is-better-P4AIjQw1BuY-unsplash.jpg">
+            <div class="row" style="margin-bottom: 5%;">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar1()" id="img1" src="../src/images/galeria/alexander-redl-qo1pyCD02t4-unsplash.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar2()" id="img2" src="../src/images/galeria/atenea.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar3()" id="img3" src="../src/images/galeria/bruce-mars-gJtDg6WfMlQ-unsplash.jpg">
+                </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/bruce-mars-gJtDg6WfMlQ-unsplash.jpg">
-            </div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/cathy-pham-3jAN9InapQI-unsplash.jpg">
-            </div>
-            <div class="col-2"></div>
-        </div>
 
-        <div class="row" style="margin-bottom: 5%;">
-            <div class="col-2"></div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/gina-lin-m27OTMegUyA-unsplash.jpg">
+            <div class="row" style="margin-bottom: 5%;">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar4()" id="img4" src="../src/images/galeria/cathy-pham-3jAN9InapQI-unsplash.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar5()" id="img5" src="../src/images/galeria/mujeres-plan-quemar-grasa-ejercicios-1024x682.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar6()" id="img6" src="../src/images/galeria/graham-mansfield-y7ywDXWJ-JU-unsplash.jpg">
+                </div>            
+                <div class="col-1"></div>
             </div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/graham-mansfield-y7ywDXWJ-JU-unsplash.jpg">
-            </div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/jelmer-assink-gzeTjGu3b_k-unsplash.jpg">
-            </div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/sven-mieke-jO6vBWX9h9Y-unsplash.jpg">
-            </div>
-            <div class="col-2"></div>
-        </div>
 
-        <div class="row" style="margin-bottom: 5%;">
-            <div class="col-2"></div>
-            <div class="col-2">
-                <img class="images" src="../src/images/galeria/victor-freitas-WvDYdXDzkhs-unsplash.jpg">
-            </div>            
+            <div class="row" style="margin-bottom: 5%;">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar7()" id="img7" src="../src/images/galeria/afrodita.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar8()" id="img8" src="../src/images/galeria/sven-mieke-jO6vBWX9h9Y-unsplash.jpg">
+                </div>
+                <div class="col-3">
+                    <img class="images" onclick="ampliar9()" id="img9" src="../src/images/galeria/victor-freitas-WvDYdXDzkhs-unsplash.jpg">
+                </div>            
+            </div>
         </div>
     </div>
 </body>
+<script type="text/javascript" src="../src/JavaScript/galeria.js"></script>
 </html>
