@@ -100,6 +100,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
         <div class="row" style="margin-bottom: 5%;">
             <div class="col-2"></div>
+            
             <div class="col-2">
                 <img class="images" src="../src/images/galeria/gina-lin-m27OTMegUyA-unsplash.jpg">
             </div>
