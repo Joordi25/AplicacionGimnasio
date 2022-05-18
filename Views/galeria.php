@@ -107,7 +107,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <img class="images" onclick="ampliar4()" id="img4" src="../src/images/galeria/cathy-pham-3jAN9InapQI-unsplash.jpg">
                 </div>
                 <div class="col-3">
-                    <img class="images" onclick="ampliar5()" id="img5" src="../src/images/galeria/MicrosoftTeams-image.png">
+                    <img class="images" onclick="ampliar5()" id="img5" src="../src/images/galeria/mujeres-plan-quemar-grasa-ejercicios-1024x682.jpg">
                 </div>
                 <div class="col-3">
                     <img class="images" onclick="ampliar6()" id="img6" src="../src/images/galeria/graham-mansfield-y7ywDXWJ-JU-unsplash.jpg">

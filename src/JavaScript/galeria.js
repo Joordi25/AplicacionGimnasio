@@ -1,33 +1,3 @@
-/*function original() {
-	var imagen1 = document.getElementById("img1");
-	var imagen2 = document.getElementById("img2");
-	var imagen3 = document.getElementById("img3");
-
-	var imagen4 = document.getElementById("img4");
-	var imagen5 = document.getElementById("img5");
-	var imagen6 = document.getElementById("img6");
-
-	var imagen7 = document.getElementById("img7");
-	var imagen8 = document.getElementById("img8");
-	var imagen9 = document.getElementById("img9");
-
-	imagen1.style.width = "420px";
-	imagen1.style.height = "300px";
-}
-
-function verimg1() {
-	var abrirImagen = document.getElementById("img1");
-	abrirImagen.style.width = "840px";
-	abrirImagen.style.height = "600px";
-}
-
-function verimg2() {
-	var abrirImagen = document.getElementById("img2");
-	abrirImagen.style.width = "840px";
-	abrirImagen.style.height = "600px";
-}*/
-
-
 function volver() {
 	document.getElementById("oculto").style.display = "none";
 	document.getElementById("galeria").style.display = "block";
@@ -58,7 +28,7 @@ function ampliar4() {
 }
 
 function ampliar5() {
-	document.getElementById("ampliado").src = "../src/images/galeria/MicrosoftTeams-image.png";
+	document.getElementById("ampliado").src = "../src/images/galeria/mujeres-plan-quemar-grasa-ejercicios-1024x682.jpg";
 	document.getElementById("oculto").style.display = "block";
 	document.getElementById("galeria").style.display = "none";
 }
