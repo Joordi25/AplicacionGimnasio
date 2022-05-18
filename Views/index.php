@@ -37,7 +37,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <a class="menu selected" href="#">INICIO</a>
                 </div>
                 <div class="col-md-1 top">
-                    <a class="menu" href="reservas.php">RESERVAS</a>
+                    <a class="menu" href="../src/php/reservas/login.php">RESERVAS</a>
                 </div>
                 <div class="col-md-1 top">
                     <a class="menu" href="../src/php/cesta/inicio.php">TIENDA</a>
@@ -215,7 +215,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <ul class="footer-links">
               <li><a href="">Telf: +34 93311350</a></li>
               <li><a href="">Mail: zeussupport@gmail.com</a></li>
-              <li><a href="">Fotos</a></li>
+              <li><a href="galeria.php">Fotos</a></li>
               <li><a href="#instalaciones">Instalaciones</a></li>
               <li><a href="">Inicio</a></li>
             </ul>
