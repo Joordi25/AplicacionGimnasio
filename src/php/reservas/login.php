@@ -49,6 +49,7 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
+	<h1>CENTRO DE RESERVAS</h1>
 	<img src="../../images/Logo.png">
 	<div class="container" style="width: 400px;">
 		<form action="" method="post">
@@ -64,8 +65,8 @@ if (isset($_POST['login'])) {
 
 			<button class="btn btn-info" value="Login" type="submit" name="login">
 				Login
-				<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-			</button>
+				<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> <br>
+			</button> <br> <br>
 		</form>
 	</div>
 
