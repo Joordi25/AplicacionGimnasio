@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($new_password_err) && empty($confirm_password_err)) {
         $sql = "UPDATE users SET password = ? WHERE id = ?";
+        $sql2 = "UPDATE tourist SET password = ? WHERE id = ?";
 
 
         if ($stmt = mysqli_prepare($link, $sql)) {
