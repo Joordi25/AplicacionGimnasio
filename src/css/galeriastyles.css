@@ -4,8 +4,10 @@ body {
     background-attachment: fixed;
 }
 
-.text-justify {
-    text-align: justify;
+.letra {
+    font-size: 120%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .amarillo {
@@ -16,6 +18,10 @@ body {
     border: solid 2px;
     border-color: yellow;
     margin-top: 15px;
+}
+
+.text-justify {
+    text-align: justify;
 }
 
 .menu {
