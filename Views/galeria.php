@@ -86,8 +86,8 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             <div class="row">
                 <div class="col-12 titulo">
                     <h1 id="galeria2">SOBRE NOSOTROS</h1>
-                    <hr>
-                    <p>Nuestra idea estaba muy clara desde el primer momento, no hemos dudado de que el gimnasio, además de ser original, puede ser muy rentable, pues en la sociedad en la que vivimos nos preocupamos mucho tanto de nuestro físico, como de nuestra salud.
+                    <hr><br><br>
+                    <p class="letra">Nuestra idea estaba muy clara desde el primer momento, no hemos dudado de que el gimnasio, además de ser original, puede ser muy rentable, pues en la sociedad en la que vivimos nos preocupamos mucho tanto de nuestro físico, como de nuestra salud.
                     Por este motivo, para crear competencia y ser pioneros en el mundo de los gimnasios, vamos a introducir innovaciones, pues la mayoría de los gimnasios solo se dedican a la clientela de personas jóvenes y no se reciclan, ya que se acomodan a lo que tienen y no ofrecen innovaciones para seguir atrayendo a clientes.
                     Nuestra idea de gimnasio ofrecerá servicios de maquinas, fitness, aerobic, spining... para todo tipo de publico, desde jóvenes, mediana edad, y personas mayores, adaptándonos a cada nivel de edad, porque aunque nuestros mayores no están muy acostumbrados a ir al gimnasio para cuidarse, cada vez mas se van iniciando en el deporte, y para ellos realizaremos clases espaciales de relajación, gimnasia en el agua...
                     Evidentemente hay muchos gimnasios, y concretamente en  la zona donde lo vamos a situar hay 1, el cual no se ha renovado y está anticuado, así que no será un impedimento para nosotros, aunque sí nosotros para el.
@@ -95,6 +95,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 </div>
             </div>
         </div>
+
         <div id="galeria">
             <div class="row">
                 <div class="col-12 titulo">
