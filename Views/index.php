@@ -147,13 +147,13 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                 <div class="preciosname">
                     <h1 id="preciosh1">ESTUDIANTES</h1>
                     <div class="preciosprice">
-                        <h2 id="preciosh2">40€<small id="preciossmall">/mes</small></h2>     
+                        <h2 id="preciosh2">35€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
-                            <p>Contendio1</p>
-                            <p>Contendio2</p>
-                            <p>Contendio3</p>
-                            <p>Contendio4</p>
-                            <p>Contendio5</p>
+                            <p>ACCESO A TODO EL GIMNASIO</p>
+                            <p>DOS INVITACIONES PARA DOS AMIGOS</p>
+                            <p>ACCESO A TODAS LAS SALAS</p>
+                            <p>ACCESO A LA PISCINA</p>
+                            <p>MATERIAL DE REGALO</p>
                         </div>               
                     </div>
                 </div>                
@@ -168,11 +168,11 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <div class="preciosprice">
                         <h2 id="preciosh2">55€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
-                            <p>Contendio1</p>
-                            <p>Contendio2</p>
-                            <p>Contendio3</p>
-                            <p>Contendio4</p>
-                            <p>Contendio5</p>
+                            <p>ACCESO A TODO EL GIMNASIO</p>
+                            <p>ENTRENAMIENTOS PERSONALIZADOS</p>
+                            <p>ENTRENADOR PERSONAL</p>
+                            <p>EQUIPO COMPLETO</p>
+                            <p>FISIO Y SALAS DE ESPA</p>
                         </div>               
                     </div>
                 </div>                
@@ -187,11 +187,11 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
                     <div class="preciosprice">
                         <h2 id="preciosh2">50€<small id="preciossmall">/mes</small></h2>     
                         <div class="precioscontenido">
-                            <p>Contendio1</p>
-                            <p>Contendio2</p>
-                            <p>Contendio3</p>
-                            <p>Contendio4</p>
-                            <p>Contendio5</p>
+                            <p>ACCESO A TODO EL GIMNASIO </p>
+                            <p>PUEDES TRAER HASTA 5 AMIGOS O FAMILIARES</p>
+                            <p>CLASES EN FAMILIA</p>
+                            <p>CASAL PARA LOS HIJOS</p>
+                            <p>MATRICULA GRATIS</p>
                         </div>               
                     </div>
                 </div>                
