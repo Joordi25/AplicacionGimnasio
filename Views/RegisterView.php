@@ -177,7 +177,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         $codigo_email = sha1(time() + rand(0, 9999));
-        $hashed_password = password_hash("$password", PASSWORD_DEFAULT);
+        //$hashed_password = password_hash("$password", PASSWORD_DEFAULT);
+        $hashed_password = hash("sha256", $password);
         $sql = "INSERT INTO users (username, password, Correo, direccion, nombre, apellidos, num_tlf, pais, fecha, foto)
                 VALUES ('$username', '$hashed_password', '$Correo', '$direccion', '$nombre', '$apellidos', '$num_tlf', '$pais', '$fecha', '$imagen')";
 

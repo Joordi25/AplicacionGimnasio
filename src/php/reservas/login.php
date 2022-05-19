@@ -5,11 +5,15 @@ $db = new Database();
 if (isset($_POST['login'])) {
 	$un = $_POST['un'];
 	$up = $_POST['up'];
+	$up = hash("sha256", $up);
+	//echo $up;
+	//$up = md5($up);
 
-	$up = md5($up);
-
+	
 	$sql = 'SELECT * FROM tourist WHERE tour_un = ? AND tour_up = ?';
 	$result = $db->getRow($sql, [$un, $up]);
+	//$sql = 'SELECT * FROM tourist WHERE tour_un = ?';
+	//$result = $db->getRow($sql, [$un]);
 	//echo print_r($result);
 
 	if ($result) {
@@ -26,6 +30,7 @@ if (isset($_POST['login'])) {
 			header('location: tourist/index.php');
 		}
 	} //if true
+	
 
 } //end if isset log in
 ?>
