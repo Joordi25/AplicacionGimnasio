@@ -1,86 +1,88 @@
 body {
-	background-color: black!important;
+    background-image: url("../images/galeria/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .letra {
-	font-size: 120%;
-  }
+    font-size: 120%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
 .amarillo {
-	color: yellow!important;
+    color: yellow!important;
 }
 
 #logo {
-
-	border: solid 2px;
-	border-color: yellow;
-	margin-top: 15px;
+    border: solid 2px;
+    border-color: yellow;
+    margin-top: 15px;
 }
 
 .text-justify {
-	text-align: justify;
-  }
+    text-align: justify;
+}
 
 .menu {
-	color: white;	
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-right: 20px;
-	padding-left: 20px;
-	text-decoration: none;
-	margin-top: 10%!important;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    margin-top: 10%!important;
 }
 
 .menu:hover {
-	color: yellow;
+    color: yellow;
 }
 
 .selected {
-	border: solid 2px;
-	border-color: yellow;
+    border: solid 2px;
+    border-color: yellow;
 }
 
 .top {
-	margin-top: 1.5% !important;
-	height: 10%!important;
+    margin-top: 1.5% !important;
+    height: 10%!important;
 }
 
 #up {
-	height: 70px;
-	width: 70px;
-	position: fixed;
-  	right: 0;
-  	bottom: 0;
-	position: fixed;
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    position: fixed;
 }
 
 .titulo {
-	color: white;
-	text-align: center;
-	margin-bottom: 5%;
+    color: white;
+    text-align: center;
+    margin-bottom: 5%;
 }
 
 .images {
-	height: 300px;
-	width: 420px;
-	margin-right: 5%;
+    height: 300px;
+    width: 420px;
+    margin-right: 5%;
 }
 
-
 .images:hover {
-	height: 310px;
-	width: 440px;
-	margin-right: 5%;
-	transition: width 0.5s, height 0.5s;
+    height: 310px;
+    width: 440px;
+    margin-right: 5%;
+    transition: width 0.5s, height 0.5s;
 }
 
 #ampliado {
-	height: 700px;
-	width: 1100px;
-	border: 7px double yellow;
+    height: 700px;
+    width: 1100px;
+    border: 7px double yellow;
 }
 
 #oculto {
-	text-align: center;
-	display: none;
+    text-align: center;
+    display: none;
 }
