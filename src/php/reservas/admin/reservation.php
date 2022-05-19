@@ -118,7 +118,6 @@
 				$r_id = $r['r_id'];
 				$tfn = $r['tour_fN'];
 				$tmn = $r['tour_mN'];
-				$tln = $r['tour_lN'];
 				$tcontact = $r['tour_contact'];
 				$taddress = $r['tour_address'];
 				$img = $r['b_img'];
@@ -133,7 +132,7 @@
 				$oras = $rhr.' '.$rampm;
 		?>
 					<tr>
-						<td class="align-img"><?php echo $tfn.' '.$tmn.' '.$tln; ?></td>
+						<td class="align-img"><?php echo $tfn.' '.$tmn; ?></td>
 						<td class="align-img"><?php echo $tcontact; ?></td>
 						<td class="align-img"><?php echo $taddress; ?></td>
 						<td class="align-img"><center><img src="<?php echo $img; ?>" width="50" height="50"></center></td>
@@ -142,7 +141,7 @@
 						<td class="align-img"><?php echo $dstntn; ?></td>
 						<td class="align-img"><?php echo $rdate; ?></td>
 						<td class="align-img"><?php echo $oras; ?></td>
-						<td class="align-img"><?php echo 'Php '.number_format($bprice, 2); ?></td>
+						<td class="align-img"><?php echo number_format($bprice, 2); ?></td>
 					</tr>
 					<?php
 			}//end foreach loop of display all resevdbation

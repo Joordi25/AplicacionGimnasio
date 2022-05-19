@@ -9,6 +9,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
 
 
 
+
 $usuarios = "SELECT * FROM users WHERE username = '$user' ";
 $result = mysqli_query($link, $usuarios);
 $row = mysqli_fetch_assoc($result);

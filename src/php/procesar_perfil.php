@@ -34,12 +34,14 @@ move_uploaded_file($nombre_temporal, "$carpeta/$nombre_archivo_con_ext");
 $sql = "UPDATE users SET nombre = '$nombre', apellidos = '$apellidos', direccion = '$direccion', num_tlf = '$num_tlf', pais = '$pais', foto = '$carpeta/$nombre_archivo_con_ext' WHERE username = '$user'";
 $sql2 = "UPDATE users SET nombre = '$nombre', apellidos = '$apellidos', direccion = '$direccion', num_tlf = '$num_tlf', pais = '$pais' WHERE username = '$user'";
 
-
+$sql3 = "UPDATE tourist SET tour_fN = '$nombre', tour_mN = '$apellidos', tour_address = '$direccion', tour_contact = '$num_tlf' WHERE tour_un = '$user'";
 
 if (empty ($nombre_temporal)){
     $result = mysqli_query($link, $sql2);
+    $result2 = mysqli_query($link, $sql3);
 }else{
     $result = mysqli_query($link, $sql);
+    $result2 = mysqli_query($link, $sql3);
 }
 
 

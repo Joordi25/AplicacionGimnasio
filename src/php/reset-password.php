@@ -8,6 +8,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 require_once "config.php";
 
+$user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : 'registrate';
+
+
 $new_password = $confirm_password = "";
 $new_password_err = $confirm_password_err = "";
 
@@ -35,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($new_password_err) && empty($confirm_password_err)) {
         $sql = "UPDATE users SET password = ? WHERE id = ?";
-        $sql2 = "UPDATE tourist SET password = ? WHERE id = ?";
+        $sql2 = "UPDATE tourist SET tour_up = ? WHERE tour_un = $user";
 
 
         if ($stmt = mysqli_prepare($link, $sql)) {
@@ -48,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
 
 
-
             if (mysqli_stmt_execute($stmt)) {
                 session_destroy();
                 header("location: /AplicacionGimnasio/Views/LoginView.php");
@@ -56,10 +58,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo "Algo salió mal, por favor vuelva a intentarlo.";
             }
+
+            
         }
+
+       
+
+        
+
 
         mysqli_stmt_close($stmt);
     }
+
+
+    
 
     mysqli_close($link);
 }
