@@ -182,8 +182,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$username', '$hashed_password', '$Correo', '$direccion', '$nombre', '$apellidos', '$num_tlf', '$pais', '$fecha', '$imagen')";
 
 
-        $sql2 = "INSERT INTO tourist (tour_fN, tour_mN, tour_address, tour_contact, tour_un, tour_up, user_type)
-                 VALUES ('$nombre', '$apellidos', '$direccion', '$num_tlf', '$username', '$hashed_password', 2)";
+        $sql2 = "INSERT INTO tourist (tour_fN, tour_mN, tour_lN, tour_address, tour_contact, tour_un, tour_up, user_type)
+                 VALUES ('$nombre', '$apellidos', '$apellidos', '$direccion', '$num_tlf', '$username', '$hashed_password', 2)";
 
 
 
