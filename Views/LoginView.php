@@ -11,6 +11,8 @@ require_once "../src/php/config.php";
 $username = $password = "";
 $username_err = $password_err = "";
 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty(trim($_POST["username"]))) {
@@ -28,6 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err)) {
         //$sql = "SELECT id, username, password FROM users WHERE username = ?";
         $consulta = $link2->prepare("SELECT id, username, password FROM users WHERE username = ?");
+
+
+        $password = hash("sha256", $password);
+        echo print_r($password);
+
         $consulta->bind_param('s', $username);
         $consulta->execute();
         $fila = $consulta->get_result()->fetch_assoc();
