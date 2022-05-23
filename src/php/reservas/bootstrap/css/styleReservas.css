@@ -1,4 +1,5 @@
 .background {
-    background-image: url('../../class_image/fondo.jpg');
+    background-image: url("/AplicacionGimnasio/src/php/reservas/class_image/fondo.jpg");
     background-size: cover;
+    background-attachment: fixed;
 }
