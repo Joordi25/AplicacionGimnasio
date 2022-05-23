@@ -13,6 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Reservas</title>
 		<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/styleReservas.css">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">

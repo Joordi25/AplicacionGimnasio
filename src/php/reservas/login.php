@@ -40,8 +40,8 @@ if (isset($_POST['login'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Confirmar Usuario</title>
 	<link rel="shortcut icon" href="\AplicacionGimnasio\images\icon.png" type="image/x-icon">
-	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/styleReservas.css">
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/jquery.dataTables.css">
 
