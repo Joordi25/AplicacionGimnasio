@@ -13,6 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Clases</title>
 		<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/styleReservas.css">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -34,34 +35,28 @@
 		}
 	</style>
 
-	<body>
+	<body style="background-color: skyblue;">
 
 		<!-- begin whole content -->
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-				<div class="container-fluid">
+			<nav class="background navbar-fixed-top" role="navigation">
+				<div class="container-fluid" style="margin-bottom: 25px; margin-top: 25px;">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<img src="../../../images/Logo.png" height="50" width="50"> &nbsp;
+						<a href="../../../../index.php"><img src="../../../../images/logo.png" height="60" width="60"></a> &nbsp;
 					</div>
 			
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#" style="font-family: Times New Roman; font-size: 30px;">Centro de Reservas</a></li>
+							<li style="color: white; font-family: Times New Roman; font-size: 30px; margin-right: 20px;">Centro de Reservas </li>
 						</ul>
 
 						<ul class="nav navbar-nav" style="font-family: Times New Roman;">
-							<li class="active">
-								<a href="index.php">Clases</a>
+							<li style="background-color: skyblue; margin-right: 20px;">
+								<a style="color: darkblue;" href="index.php">Clases</a>
 							</li>
 							<li>
-								<a href="reservation.php">Reservas</a>
+								<a style="color: white;" href="reservation.php">Reservas</a>
 							</li>
 						</ul>
 						
@@ -75,12 +70,7 @@
 				</div>
 			</nav>
 		<!-- end -->
-
-		<br />
-		<br />
-		<br />
-		<br />
-		
+		<br><br><br><br><br><br><br>
 		<!-- main cntent -->
 		<?php 
 				//para delete
