@@ -38,8 +38,8 @@ if (isset($_POST['login'])) {
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Boat Reservation</title>
-
+	<title>Confirmar Usuario</title>
+	<link rel="shortcut icon" href="\AplicacionGimnasio\images\icon.png" type="image/x-icon">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/styleReservas.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
