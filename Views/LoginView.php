@@ -10,7 +10,6 @@ require_once "../src/php/config.php";
 
 $username = $password = "";
 $username_err = $password_err = "";
-$password = hash("sha256", $password);
 
 
 
