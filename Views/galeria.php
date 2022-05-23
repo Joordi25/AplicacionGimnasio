@@ -80,7 +80,7 @@ $user =  !empty($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"])
             </div>
         </div>
 
-        <div id="galeria">
+        <div id="resumen">
             <div class="row">
                 <div class="col-12 titulo">
                     <h1 id="galeria2">SOBRE NOSOTROS</h1>
