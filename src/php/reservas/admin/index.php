@@ -126,7 +126,7 @@
 						<td class="align-img"><?php echo $bcpcty; ?></td>
 						<td class="align-img"><?php echo $bon; ?></td>
 						<td class="align-img"><center><img src="<?php echo $bimg; ?>" width="50" height="50"></center></td>
-						<td class="align-img"><?php echo 'Php '.number_format($bPrice, 2); ?></td>
+						<td class="align-img"><?php echo number_format($bPrice, 2); ?></td>
 						<td class="align-img">
 							<a class = "btn btn-primary btn-xs" href="classupdate.php?editid=<?php echo $bid; ?>">
 								Editar

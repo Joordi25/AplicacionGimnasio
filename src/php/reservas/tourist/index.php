@@ -118,7 +118,7 @@ $db = new Database();
 						      				<form>
 						      					<strong>Clase: </strong><?php echo $bName; ?><br />
 							      				<strong>Capacidad: </strong><?php echo $bCap; ?><br />
-							      				<strong>Precio: </strong><?php echo 'Php '.number_format($bPrice, 2); ?><br />
+							      				<strong>Precio: </strong><?php echo number_format($bPrice, 2); ?><br />
 							      				<strong>Instructor: </strong><?php echo $bON; ?> <br />
 							      				<strong>Comentario: </strong> <br />
 							      				<input type = "text" id="dstntn<?php echo $b_id; ?>" >
