@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Clases</title>
 		<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="../bootstrap/css/styleReservas.css">
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/styleReservasIndex.css">
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -56,12 +56,12 @@
 								<a style="color: darkblue;" href="index.php">Clases</a>
 							</li>
 							<li>
-								<a style="color: white;" href="reservation.php">Reservas</a>
+								<a style="color: skyblue;" href="reservation.php">Reservas</a>
 							</li>
 						</ul>
 						
 						<ul class="nav navbar-nav navbar-right" style="font-family: Times New Roman;">
-							<li>
+							<li style="margin-right: 25px;">
 								<?php include_once('../includes/logout.php'); ?>
 							</li>
 						
@@ -128,7 +128,7 @@
 						<td class="align-img"><center><img src="<?php echo $bimg; ?>" width="50" height="50"></center></td>
 						<td class="align-img"><?php echo 'Php '.number_format($bPrice, 2); ?></td>
 						<td class="align-img">
-							<a class = "btn btn-success btn-xs" href="classupdate.php?editid=<?php echo $bid; ?>">
+							<a class = "btn btn-primary btn-xs" href="classupdate.php?editid=<?php echo $bid; ?>">
 								Editar
 								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 							</a>

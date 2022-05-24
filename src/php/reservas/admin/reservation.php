@@ -14,7 +14,7 @@ $db = new Database();
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Reservas</title>
 	<link rel="shortcut icon" href="../../../images/Logo.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/styleReservas.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/styleReservas.css">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
@@ -68,7 +68,7 @@ $db = new Database();
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right" style="font-family: Times New Roman;">
-					<li>
+					<li style="margin-right: 25px;">
 						<?php include_once('../includes/logout.php'); ?>
 					</li>
 
