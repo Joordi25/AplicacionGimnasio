@@ -193,8 +193,6 @@ $db = new Database();
 	</div>
 	<!-- main cntent -->
 
-
-
 	<script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
 	<script src="../bootstrap/js/dataTables.js"></script>
 	<script src="../bootstrap/js/dataTables2.js"></script>
