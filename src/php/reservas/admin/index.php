@@ -22,8 +22,6 @@
 		 <!--pagination-->
 	    <link rel="stylesheet" href="../bootstrap/css/jquery.dataTables.css"><!--searh box positioning-->
 	    <script src="../bootstrap/	js/jquery.dataTables2.js"></script>
-
-
 	</head>
 
 	<style type="text/css">
