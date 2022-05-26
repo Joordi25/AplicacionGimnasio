@@ -88,15 +88,7 @@
 				$bN = $_POST['bN'];
 				$bC = $_POST['bC'];
 				$bON = $_POST['bON'];
-
-				$bPrice = null;
-				if ($bC == '15 Personas') {
-					$bPrice = 30;
-				} else if ($bC == '25 Personas') {
-					$bPrice = 35;
-				} else {
-					$bPrice = 40;
-				}
+				$bPrice = $_POST['bprice'];
 
 				$sql = "INSERT INTO boats (b_name, b_cpcty, b_on, b_img, b_price)
 									VALUES(?,?,?,?,?);

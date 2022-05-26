@@ -20,7 +20,7 @@
 				echo '
 					<div class="alert alert-danger">
 					  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					  <strong>Warning!</strong> Destination is Required.
+					  <strong>¡Cuidado!</strong> El comentario es obligatorio.
 					</div>
 				';
 			}
@@ -28,7 +28,7 @@
 				echo '
 					<div class="alert alert-danger">
 					  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					  <strong>Warning!</strong> Date is Required.
+					  <strong>¡Cuidado!</strong> La fecha es obligatoria.
 					</div>
 				';
 			}
@@ -43,7 +43,7 @@
 								echo '
 										<div class="alert alert-danger">
 										  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-										  <strong>Warning!</strong> Reservation of this Boat is already in his Limit.
+										  <strong>¡Cuidado!</strong> La clase ya está llena.
 										</div>
 									';
 
@@ -67,7 +67,7 @@
 														echo '
 																<div class="alert alert-danger">
 																  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-																  <strong>Warning!</strong> Has been already Reserved.
+																  <strong>¡Cuidado!</strong> Ya se ha reservado.
 																</div>
 															';
 													}
@@ -83,7 +83,7 @@
 											echo '
 													<div class="alert alert-success">
 													  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-													  <strong>Success!</strong> Reserved Successfully.
+													  <strong>¡Hecho!</strong> Reserva exitosa.
 													</div>
 												';
 										}

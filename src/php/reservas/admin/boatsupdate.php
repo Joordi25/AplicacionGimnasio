@@ -96,6 +96,7 @@ $db = new Database();
 					$bon =  $res['b_on'];
 					$bcpcty =  $res['b_cpcty'];
 					$getoldbimg = $res['b_img'];
+					$bPrice = $res['b_price'];
 				}
 
 				//update boat
@@ -107,16 +108,7 @@ $db = new Database();
 					$bon = $_POST['bON'];
 					$bcpcty = $_POST['bC'];
 					$oldbimg = $_POST['oldbimg'];
-
-
-					$bPrice = null;
-					if ($bcpcty == '15 Persons') {
-						$bPrice = 3000;
-					} else if ($bcpcty == '25 Persons') {
-						$bPrice = 3500;
-					} else {
-						$bPrice = 4000;
-					} //end if else of bc price
+					$bPrice = $_POST['bprice'];
 
 
 					//select old photo to delete in folder
@@ -125,8 +117,8 @@ $db = new Database();
 
 					$new_image_name = 'image_' . date('Y-m-d-H-i-s') . '_' . uniqid() . '.jpg';
 					// do some checks to make sure the file you have is an image and if you can trust it
-					move_uploaded_file($_FILES["bimg"]["tmp_name"], "../boat_image/" . $new_image_name);
-					$new_image_name = '../boat_image/' . $new_image_name;
+					move_uploaded_file($_FILES["bimg"]["tmp_name"], "../class_image/" . $new_image_name);
+					$new_image_name = '../class_image/' . $new_image_name;
 
 					if (empty($_FILES["bimg"]["tmp_name"])) {
 						$sql = "UPDATE boats SET b_name = ?, b_cpcty = ?, b_on = ?, b_price = ? WHERE b_id = ?";
@@ -134,7 +126,7 @@ $db = new Database();
 					} else {
 						$sql = "UPDATE boats SET b_name = ?, b_cpcty = ?, b_on = ?, b_img = ?, b_price = ? WHERE b_id = ?";
 						$res = $db->updateRow($sql, [$bname, $bcpcty, $bon, $new_image_name, $bPrice, $editid]);
-						if ($oldbimg != '../boat_image/default.png') {
+						if ($oldbimg != '../class_image/fondo.jpg') {
 							unlink($oldbimg);
 						}
 					}
@@ -177,7 +169,7 @@ $db = new Database();
 
 				<div class="form-group">
 					<label for="inputdefault">Precio por persona:</label>
-					<input class="form-control" id="inputdefault" name="bprice" type="number">
+					<input class="form-control" id="inputdefault" name="bprice" value="<?php echo $bPrice; ?>" type="number">
 				</div>
 
 

@@ -153,7 +153,7 @@ $db = new Database();
 						<td class="align-img"><?php echo $dstntn; ?></td>
 						<td class="align-img"><?php echo $rdate; ?></td>
 						<td class="align-img"><?php echo $oras; ?></td>
-						<td class="align-img"><?php echo number_format($bprice, 2); ?></td>
+						<td class="align-img"><?php echo number_format($bprice, 2) . ' €'; ?></td>
 						<td class="align-img">
 							<a class="btn btn-danger  btn-xs" href="myreservation.php?delr_id=<?php echo $r_id; ?>">
 								Cancelar
