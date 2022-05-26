@@ -97,7 +97,7 @@ $db = new Database();
 			echo '
 								<div class="alert alert-success">
 								  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-								  <strong>Success!</strong> Cancel Reservation Successfully.
+								  <strong>¡Hecho!</strong> Tu reserva se ha cancelado.
 								</div>
 							';
 			// header('Location: myreservation.php');
