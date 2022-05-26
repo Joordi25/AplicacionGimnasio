@@ -152,7 +152,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="inputdefault">Instructor:</label>
+					<label for="inputdefault">Nombre del instructor:</label>
 					<input class="form-control" id="inputdefault" name="bON" type="text">
 				</div>
 
@@ -163,6 +163,11 @@
 						<option value="25 Persons">25 Persons</option>
 						<option value="30 Persons">30 Persons</option>
 					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="inputdefault">Precio por persona:</label>
+					<input class="form-control" id="inputdefault" name="bprice" type="number">
 				</div>
 
 				<div class="form-group">
