@@ -99,14 +99,14 @@
 					echo '
 										<div class="alert alert-danger">
 										  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-										  <strong>Error!</strong> Boat Name is Required.
+										  <strong>¡Error!</strong> El nombre de la clase es necesario.
 										</div>
 									';
 				} else if (!$bON) {
 					echo '
 										<div class="alert alert-danger">
 										  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-										  <strong>Error!</strong> Boat Operator Name is Required.
+										  <strong>¡Error!</strong> El nombre del instructor necesario.
 										</div>
 									';
 				} else {
@@ -126,7 +126,7 @@
 						echo '
 										<div class="alert alert-success">
 										  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-										  <strong>Success!</strong> Save Successfully.
+										  <strong>¡Hecho!</strong> Guardado correctamente.
 										</div>
 									';
 					} //end if $ress

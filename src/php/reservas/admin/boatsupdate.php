@@ -135,7 +135,7 @@ $db = new Database();
 					echo '
 							 				<div class="alert alert-success">
 											  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-											  <strong>Success!</strong> Edit Successfully.
+											  <strong>¡Hecho!</strong> Editado correctamente.
 											</div>
 							 			';
 				} //end if isset updateboat
