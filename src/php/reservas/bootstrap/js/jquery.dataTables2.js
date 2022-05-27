@@ -10604,7 +10604,7 @@
                      *      } );
                      *    } );
                      */
-                    "sLengthMenu": "Mostrar _MENU_ páginas",
+                    "sLengthMenu": "Mostrar _MENU_ entradas",
 
 
                     /**
