@@ -1,6 +1,5 @@
 <?php
-include_once('config.php');
-include_once('database/Database.php'); //database
+include_once('config.php'); //database
 $db = new Database();
 $password_err = "";
 

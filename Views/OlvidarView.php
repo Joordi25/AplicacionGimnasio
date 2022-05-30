@@ -14,7 +14,6 @@ $imagen = "../src/images/perfil/perfil_defecto.jpg";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="\AplicacionGimnasio\images\icon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="../src/css/LoginStyle.css" rel="stylesheet">
@@ -28,16 +27,16 @@ $imagen = "../src/images/perfil/perfil_defecto.jpg";
 <body>
     <img src="../images/logo.png">
     <div class="container" style="width: 400px;">
-        <form action="../src/php/recuperar.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="row">
 
                 <div class="col-12">
                     <label for="Correo">Mail</label><br>
-                    <input class="form-control" type="email" id="Correo" name="txtcorreo" value="<?php echo $Correo; ?>" required><br><br>
+                    <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
                 </div>
               
             </div>
-            <button type="submit" value="Recuperar" class="btn btn-outline-warning" onClick="javascript: return confirm('¿Deseas enviar tu contraseña a tu correo?');">Recuperar contraseña</button><br><br><br>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning">Restablecer contraseña</button><br><br><br>
             <label>No tienes cuenta?</label>
             <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
             <label>Ya tienes una cuenta?</label>
