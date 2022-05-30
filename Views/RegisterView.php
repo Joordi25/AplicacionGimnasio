@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (mysqli_stmt_execute($stmt)) {
                 mysqli_stmt_store_result($stmt);
-
+              
                 $fecha = trim($_POST["fecha"]);
             } else {
                 echo "Al parecer algo salió mal.";
@@ -133,19 +133,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (empty(trim($_POST["num_tlf"]))) {
-        $num_tlf_err = "Por favor ingrese el número de teléfono.";
+        $num_tlf_err = "Por favor ingrese un numero de teléfono.";
     } else {
         $sql = "SELECT id FROM users WHERE num_tlf = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_num_tlf);
+            mysqli_stmt_bind_param($stmt, "s", $param_tlf);
 
-            $param_num_tlf = trim($_POST["num_tlf"]);
+            $param_tlf = trim($_POST["num_tlf"]);
 
             if (mysqli_stmt_execute($stmt)) {
                 mysqli_stmt_store_result($stmt);
 
-                $num_tlf = trim($_POST["num_tlf"]);
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    $num_tlf_err = "Este numero de teléfono ya está registrado.";
+                } else {
+                    $num_tlf = trim($_POST["num_tlf"]);
+                }
             } else {
                 echo "Al parecer algo salió mal.";
             }
@@ -262,19 +266,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input class="form-control" type="text" id="apellidos" value="<?php echo $apellidos; ?>" name="apellidos" required><br><br>
                 </div> 
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                     <label for="username">Usuario</label><br>
                     <input class="form-control" type="text" id="username" name="username" value="<?php echo $username; ?>" required><br><br>
+                    <span class="help-block"><?php echo $username_err; ?></span>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 form-group <?php echo (!empty($Correo_err)) ? 'has-error' : ''; ?>">
                     <label for="Correo">Mail</label><br>
                     <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
+                    <span class="help-block"><?php echo $Correo_err; ?></span>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 form-group <?php echo (!empty($num_tlf_err)) ? 'has-error' : ''; ?>">
                     <label for="num_tlf">Teléfono</label><br>
                     <input class="form-control" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
+                    <span class="help-block"><?php echo $num_tlf_err; ?></span>
                 </div>
 
                 <div class="col-12 col-md-6">

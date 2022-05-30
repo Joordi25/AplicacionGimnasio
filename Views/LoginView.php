@@ -2,6 +2,8 @@
 include_once('../src/php/reservas/config.php'); //database
 $db = new Database();
 
+$password_err = "";
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,7 +20,9 @@ if (isset($_POST['login'])) {
         $_SESSION['id'] = $result['id'];
         $_SESSION['username'] = $username;
         header('location: index.php');
-    } //if true
+    } else{
+        $password_err = "Has introducido los datos inocrrectamente";
+    }
 
 } //end if isset log in
 ?>
@@ -47,12 +51,12 @@ if (isset($_POST['login'])) {
 
 
         <form action="" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label for="inputdefault">Usuario</label>
                 <input class="form-control" name="username" id="username" type="text" required autofocus value="<?php if (isset($_POST['username'])) {
                                                                                                         echo $_POST['username'];
                                                                                                     } ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <span class="help-block"><?php echo $password_err; ?></span>
             </div> <br> 
             <div class="form-group">
                 <label for="inputdefault">Contraseña:</label>

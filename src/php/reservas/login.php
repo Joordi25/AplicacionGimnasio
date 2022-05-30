@@ -1,6 +1,7 @@
 <?php
 include_once('config.php'); //database
 $db = new Database();
+$password_err = "";
 
 if (isset($_POST['login'])) {
 	$un = $_POST['un'];
@@ -26,7 +27,10 @@ if (isset($_POST['login'])) {
 
 			header('location: tourist/index.php');
 		}
-	} //if true
+	} else{
+        $password_err = "Has introducido los datos inocrrectamente";
+    }
+
 
 } //end if isset log in
 ?>
@@ -75,11 +79,12 @@ if (isset($_POST['login'])) {
 				</div>
 				<div class="panel-body">
 					<form action="" method="post">
-						<div class="form-group">
+						<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
 							<label for="inputdefault">Usuario:</label>
 							<input class="form-control" name="un" type="text" required autofocus value="<?php if (isset($_POST['un'])) {
 																											echo $_POST['un'];
 																										} ?>">
+							<span class="help-block"><?php echo $password_err; ?></span>
 						</div>
 
 						<div class="form-group">
