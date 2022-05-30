@@ -2,6 +2,8 @@
 include_once('../src/php/reservas/config.php'); //database
 $db = new Database();
 
+$password_err = "";
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,52 +20,11 @@ if (isset($_POST['login'])) {
         $_SESSION['id'] = $result['id'];
         $_SESSION['username'] = $username;
         header('location: index.php');
-    } //if true
+    } else{
+        $password_err = "Has introducido los datos inocrrectamente";
+    }
 
 } //end if isset log in
-
-
-
-$username_err = $password_err = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    if (empty(trim($_POST["username"]))) {
-        $username_err = "Por favor ingrese su usuario.";
-    } else {
-        $username = trim($_POST["username"]);
-    }
-
-    if (empty(trim($_POST["password"]))) {
-        $password_err = "Por favor ingrese su contraseña.";
-    } else {
-        $password = trim($_POST["password"]);
-    }
-
-    if (empty($username_err) && empty($password_err)) {
-        //$sql = "SELECT id, username, password FROM users WHERE username = ?";
-        $consulta = $link2->prepare("SELECT id, username, password FROM users WHERE username = ?");
-        $consulta->bind_param('s', $username);
-        $consulta->execute();
-        $fila = $consulta->get_result()->fetch_assoc();
-        $link2->close();
-        $consulta->close();
-        if (password_verify($password, $fila['password'])) {
-            session_start();
-
-            $_SESSION["loggedin"] = true;
-            $_SESSION["id"] = $fila['id'];
-            $_SESSION["username"] = $username;
-
-            header("location: ../Index.php");
-        } else {
-            $password_err = "La contraseña que has ingresado no es válida.";
-        }
-
-   }
-
-   mysqli_close($link);
-}
 ?>
 
 <!DOCTYPE html>
@@ -90,12 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         <form action="" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label for="inputdefault">Usuario</label>
                 <input class="form-control" name="username" id="username" type="text" required autofocus value="<?php if (isset($_POST['username'])) {
                                                                                                         echo $_POST['username'];
                                                                                                     } ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <span class="help-block"><?php echo $password_err; ?></span>
             </div> <br> 
             <div class="form-group">
                 <label for="inputdefault">Contraseña:</label>
