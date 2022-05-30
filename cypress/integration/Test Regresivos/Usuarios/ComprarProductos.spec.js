@@ -24,7 +24,6 @@ describe('Iniciar Sesión en la web', () => {
         cy.get('[href="clear_cart.php"]').click()
         cy.wait(2000)
         cy.get(':nth-child(2) > :nth-child(1) > .productos > .product_footer > .pull-right > .btn').click()
-        cy.get(':nth-child(3) > .productos > .product_footer > .pull-right > .btn').click()
         cy.get('#dropdownMenuButton1').click()
         cy.get(':nth-child(2) > .dropdown-item').click()
         cy.get('[href="compra/pagar.php"]').click()

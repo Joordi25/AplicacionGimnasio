@@ -21,6 +21,49 @@ if (isset($_POST['login'])) {
     } //if true
 
 } //end if isset log in
+
+
+
+$username_err = $password_err = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (empty(trim($_POST["username"]))) {
+        $username_err = "Por favor ingrese su usuario.";
+    } else {
+        $username = trim($_POST["username"]);
+    }
+
+    if (empty(trim($_POST["password"]))) {
+        $password_err = "Por favor ingrese su contraseña.";
+    } else {
+        $password = trim($_POST["password"]);
+    }
+
+    if (empty($username_err) && empty($password_err)) {
+        //$sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $consulta = $link2->prepare("SELECT id, username, password FROM users WHERE username = ?");
+        $consulta->bind_param('s', $username);
+        $consulta->execute();
+        $fila = $consulta->get_result()->fetch_assoc();
+        $link2->close();
+        $consulta->close();
+        if (password_verify($password, $fila['password'])) {
+            session_start();
+
+            $_SESSION["loggedin"] = true;
+            $_SESSION["id"] = $fila['id'];
+            $_SESSION["username"] = $username;
+
+            header("location: ../Index.php");
+        } else {
+            $password_err = "La contraseña que has ingresado no es válida.";
+        }
+
+   }
+
+   mysqli_close($link);
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,18 +90,19 @@ if (isset($_POST['login'])) {
 
 
         <form action="" method="post">
-            <div class="form-group">
-                <label for="inputdefault">Usuario:</label>
-                <input class="form-control" name="username" type="text" required autofocus value="<?php if (isset($_POST['username'])) {
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <label for="inputdefault">Usuario</label>
+                <input class="form-control" name="username" id="username" type="text" required autofocus value="<?php if (isset($_POST['username'])) {
                                                                                                         echo $_POST['username'];
                                                                                                     } ?>">
+                <span class="help-block"><?php echo $username_err; ?></span>
             </div> <br> 
             <div class="form-group">
                 <label for="inputdefault">Contraseña:</label>
-                <input class="form-control" name="password" type="password" required>
+                <input class="form-control" name="password" id="password" type="password" required>
             </div> <br>  <br>
 
-            <button class="btn btn-outline-warning" type="submit" name="login">
+            <button class="btn btn-outline-warning" id="iniciar" type="submit" name="login">
                 Iniciar Sesión
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
             </button> <br>
@@ -67,7 +111,7 @@ if (isset($_POST['login'])) {
 
         <label style="color: white;">No tienes cuenta?</label>
         <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
-        <a style="color: yellow" href="">Restablecer contraseña</a><br><br>
+        <a style="color: yellow" href="OlvidarView.php">Restablecer contraseña</a><br><br>
         <a style="color: yellow" href="index.php">Inicio</a><br><br>
 
     </div>

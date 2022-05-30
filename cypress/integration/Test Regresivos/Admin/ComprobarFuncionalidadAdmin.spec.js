@@ -19,7 +19,6 @@ describe('Comprobar Funcionalidades Admin', () => {
         cy.get('#dropdownMenuButton1').click()
         cy.get('[href="../src/php/cesta/inicio_admin.php"]').should('be.visible')
         cy.get('#dropdownMenuButton1').should('be.visible')
-        cy.get('nav > :nth-child(2) > a').should('be.visible')
 
     })
 

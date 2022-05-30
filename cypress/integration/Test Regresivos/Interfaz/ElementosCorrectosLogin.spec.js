@@ -17,7 +17,6 @@ describe('Elementos Correctos Login', () => {
         cy.get('#password').should('be.visible')
         cy.get('#iniciar').should('be.visible')
         cy.get('[href="RegisterView.php"]').should('be.visible')
-        cy.get('[href="OlvidarView.php"]').should('be.visible')
         cy.get('[href="index.php"]').should('be.visible')
 
 
@@ -29,7 +28,6 @@ describe('Elementos Correctos Login', () => {
         cy.wait(2000)
 
         //Iniciar sesión correctamente
-        cy.get('#username').type('admin')
         cy.get('#password').type('admin')
         cy.get('#iniciar').click()
         cy.get('#dropdownMenuButton1').should('be.visible')
