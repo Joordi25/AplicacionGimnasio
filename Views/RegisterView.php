@@ -7,7 +7,12 @@ $username_err = $password_err = $confirm_password_err = $Correo_err = $nombre_er
 $direccion = "direccion";
 $pais = "España";
 $imagen = "../images/perfil/perfil_defecto.jpg";
+$str = "";
 
+function is_valid_email($str)
+{
+  return (false !== filter_var($str, FILTER_VALIDATE_EMAIL));
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -42,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty(trim($_POST["Correo"]))) {
         $Correo_err = "Por favor ingrese un correo.";
     } else {
-        $sql = "SELECT id FROM users WHERE Correo = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $param_correo);
@@ -54,11 +58,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if (mysqli_stmt_num_rows($stmt) == 1) {
                     $Correo_err = "Este correo ya está registrado.";
+                } if ($str == false) {
+                    $Correo_err = "Introduce un formato de mail valido";
                 } else {
                     $Correo = trim($_POST["Correo"]);
                 }
-
-                
             } else {
                 echo "Al parecer algo salió mal.";
             }
@@ -123,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (mysqli_stmt_execute($stmt)) {
                 mysqli_stmt_store_result($stmt);
-              
+
                 $fecha = trim($_POST["fecha"]);
             } else {
                 echo "Al parecer algo salió mal.";
@@ -205,8 +209,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error: " . $sql2 . "<br>" . mysqli_error($link);
         }
-        
-        
+
+
         if (mysqli_query($link, $sql)) {
 
             $_SESSION["loggedin"] = true;
@@ -254,36 +258,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row">
 
                 <div class="col-12 col-md-6">
-                    <div class="control-group">
-                        <label for="nombre control-label">Nombre</label><br>
-                        <div class="controls">
-                            <input class="form-control" type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required><br><br>
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
+                    <label for="nombre control-label">Nombre</label><br>
+                    <span class="help-block"></span>
+                    <input class="form-control" type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <label for="apellidos">Apellidos</label><br>
                     <input class="form-control" type="text" id="apellidos" value="<?php echo $apellidos; ?>" name="apellidos" required><br><br>
-                </div> 
+                </div>
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                     <label for="username">Usuario</label><br>
-                    <input class="form-control" type="text" id="username" name="username" value="<?php echo $username; ?>" required><br><br>
                     <span class="help-block"><?php echo $username_err; ?></span>
+                    <input class="form-control" type="text" id="username" name="username" value="<?php echo $username; ?>" required><br><br>
                 </div>
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($Correo_err)) ? 'has-error' : ''; ?>">
                     <label for="Correo">Mail</label><br>
+                    <span class="help-block"><?php echo $Correo_err;?></span>
                     <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
-                    <span class="help-block"><?php echo $Correo_err; ?></span>
                 </div>
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($num_tlf_err)) ? 'has-error' : ''; ?>">
                     <label for="num_tlf">Teléfono</label><br>
-                    <input class="form-control" type="number" max="999999999" min="111111111" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
                     <span class="help-block"><?php echo $num_tlf_err; ?></span>
+                    <input class="form-control" type="number" max="999999999" min="111111111" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
                 </div>
 
                 <div class="col-12 col-md-6">
@@ -307,12 +307,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
-            <button type="submit" value="Registrarse" class="btn btn-outline-warning" href="LoginView.php">Registrarme</button><br><br><br>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning" href="LoginView.php" onclick="is_valid_email($str)">Registrarme</button><br><br><br>
             <label>Ya tienes una cuenta?</label>
             <a style="color: yellow" href="LoginView.php"> Inicia sesión</a><br><br>
             <a style="color: yellow" href="index.php">Inicio</a><br><br>
         </form>
-    </div> 
+    </div>
 </body>
 
 <script>
