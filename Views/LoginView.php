@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
 
         <label style="color: white;">No tienes cuenta?</label>
         <a style="color: yellow" href="RegisterView.php">Registrate</a><br><br>
-        <a style="color: yellow" href="OlvidarView.php">Restablecer contraseña</a><br><br>
+        <a style="color: yellow" href="OlvidarView.php">Recuperar contraseña</a><br><br>
         <a style="color: yellow" href="index.php">Inicio</a><br><br>
 
     </div>
