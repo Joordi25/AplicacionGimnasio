@@ -4,7 +4,7 @@
 describe('Elementos Correctos Index', () => {
     beforeEach(() => {
 
-        cy.visit('http://172.17.61.4/')
+        cy.visit('http://localhost/AplicacionGimnasio/Views/index.php')
         cy.get(':nth-child(10) > .menu').click()
         cy.wait(2000)
         cy.get('#username').type('admin')

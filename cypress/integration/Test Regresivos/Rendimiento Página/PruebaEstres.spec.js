@@ -4,7 +4,7 @@ Cypress._.times(100, (k) => {
     describe('Prueba de estres', () => {
         beforeEach(() => {
 
-            cy.visit('http://172.17.61.4/')
+            cy.visit('http://localhost/AplicacionGimnasio/Views/index.php')
             cy.get(':nth-child(10) > .menu').click()
             cy.get('#username').type('admin')
             cy.get('#password').type('admin')

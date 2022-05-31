@@ -4,7 +4,7 @@
 describe('Iniciar Sesión en la web', () => {
     beforeEach(() => {
 
-        cy.visit('http://172.17.61.4/')
+        cy.visit('http://localhost/AplicacionGimnasio/Views/index.php')
         cy.wait(2000)
     })
 
