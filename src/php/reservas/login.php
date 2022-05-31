@@ -1,7 +1,10 @@
 <?php
-include_once('config.php'); //database
+
+include_once('config.php');
+
 $db = new Database();
 $password_err = "";
+//a
 
 if (isset($_POST['login'])) {
 	$un = $_POST['un'];
