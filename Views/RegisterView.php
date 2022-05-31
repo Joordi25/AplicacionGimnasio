@@ -57,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     $Correo = trim($_POST["Correo"]);
                 }
+
+                
             } else {
                 echo "Al parecer algo salió mal.";
             }
@@ -280,7 +282,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($num_tlf_err)) ? 'has-error' : ''; ?>">
                     <label for="num_tlf">Teléfono</label><br>
-                    <input class="form-control" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
+                    <input class="form-control" type="number" max="999999999" min="111111111" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
                     <span class="help-block"><?php echo $num_tlf_err; ?></span>
                 </div>
 
