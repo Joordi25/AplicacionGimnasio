@@ -17,7 +17,6 @@ if ($nr == 1) {
 	if (mail($paracorreo, $titulo, $mensaje, $tucorreo)) {
 		echo "<script> alert('Contraseña enviado');window.location= '../../Views/LoginView.php' </script>";
 	} else {
-		die();
 		echo "<script> alert('Error');window.location= '../../Views/OlvidarView.php' </script>";
 	}
 } else {
