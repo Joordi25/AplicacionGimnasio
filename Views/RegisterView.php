@@ -288,13 +288,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($num_tlf_err)) ? 'has-error' : ''; ?>">
                     <label for="num_tlf">Teléfono</label><br>
-                    <span class="help-block"><?php echo $num_tlf_err; ?></span>
-                    <input class="form-control" type="number" max="999999999" min="111111111" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
+                    <span class="help-block" id="tel_error"><?php echo $num_tlf_err; ?></span>
+                    <input onkeyup="validateTel()" class="form-control" type="number" max="999999999" min="111111111" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <label for="fecha">Fecha de nacimiento</label><br>
-                    <input class="form-control" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" required><br><br>
+                    <span class="help-block" id="data_error">
+                    <input onkeyup="validateData()" class="form-control" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" required><br><br>
                 </div>
 
                 <div class="col-12 col-md-6">
