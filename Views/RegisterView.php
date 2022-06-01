@@ -11,7 +11,7 @@ $str = "";
 
 function is_valid_email($str)
 {
-  return (false !== filter_var($str, FILTER_VALIDATE_EMAIL));
+    return (false !== filter_var($str, FILTER_VALIDATE_EMAIL));
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -58,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if (mysqli_stmt_num_rows($stmt) == 1) {
                     $Correo_err = "Este correo ya está registrado.";
-                } if ($str == false) {
+                }
+                if ($str == false) {
                     $Correo_err = "Introduce un formato de mail valido";
                 } else {
                     $Correo = trim($_POST["Correo"]);
@@ -276,7 +277,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($Correo_err)) ? 'has-error' : ''; ?>">
                     <label for="Correo">Mail</label><br>
-                    <span class="help-block"><?php echo $Correo_err;?></span>
+                    <span class="help-block"><?php echo $Correo_err; ?></span>
                     <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
                 </div>
 
@@ -293,17 +294,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6">
                     <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                        <label for="confirm_password">Contraseña</label><br>
+                        <label>Contraseña</label>
+                        <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
                         <span class="help-block"><?php echo $password_err; ?></span>
-                        <input class="form-control" type="password" name="confirm_password" id="confirm_password" value="<?php echo $confirm_password; ?>" required><br><br>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                        <label for="password">Repetir Contraseña</label><br>
+                        <label>Confirmar Contraseña</label>
+                        <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                         <span class="help-block"><?php echo $confirm_password_err; ?></span>
-                        <input class="form-control" type="password" name="password" id="password" value="<?php echo $confirm_password; ?>" required><br><br>
                     </div>
                 </div>
             </div>
