@@ -8,10 +8,14 @@ $direccion = "direccion";
 $pais = "España";
 $imagen = "../images/perfil/perfil_defecto.jpg";
 $str = "";
-
+/*
 function is_valid_email($str)
 {
     return (false !== filter_var($str, FILTER_VALIDATE_EMAIL));
+}
+*/
+function is_valid_email($str){
+    return $error = (!filter_var($str, FILTER_VALIDATE_EMAIL)) ? true : false;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -249,6 +253,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  or use local jquery
     <script src="../src/libs/jqBootstrapValidation.js"></script>
     <script src="../src/libs/validate.min.js"></script>-->
+    <script src="../src/JavaScript/register.js"></script>
     <title>Register Zeus</title>
 </head>
 
@@ -294,21 +299,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 col-md-6">
                     <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                        <label>Contraseña</label>
-                        <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                        <span class="help-block"><?php echo $password_err; ?></span>
+                        <label for="confirm_password">Contraseña</label><br>
+                        <span class="help-block" id="password_error1"></span>
+                        <input onkeyup="validatePassword()" class="form-control" type="password" name="confirm_password" id="pass" value="<?php echo $confirm_password; ?>" required><br><br>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                        <label>Confirmar Contraseña</label>
-                        <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                        <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                        <label for="password">Repetir Contraseña</label><br>
+                        <span class="help-block" id="password_error2"></span>
+                        <input required onkeyup="validatePassword()" class="form-control" type="password" name="password" id="confirm_pass" value="<?php echo $confirm_password; ?>"><br><br>
                     </div>
                 </div>
             </div>
-            <button type="submit" value="Registrarse" class="btn btn-outline-warning" href="LoginView.php" onclick="is_valid_email($str)">Registrarme</button><br><br><br>
+            <button type="submit" value="Registrarse" class="btn btn-outline-warning" href="LoginView.php">Registrarme</button><br><br><br>
             <label>Ya tienes una cuenta?</label>
             <a style="color: yellow" href="LoginView.php"> Inicia sesión</a><br><br>
             <a style="color: yellow" href="index.php">Inicio</a><br><br>
