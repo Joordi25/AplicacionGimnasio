@@ -4,7 +4,7 @@
 describe('Iniciar Sesión en la web', () => {
     beforeEach(() => {
 
-        cy.visit('http://localhost/AplicacionGimnasio/Views/index.php')
+        cy.visit('http://172.17.61.4/')
         cy.get(':nth-child(10) > .menu').click()
         cy.wait(2000)
         cy.get('#username').type('admin')
