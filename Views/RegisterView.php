@@ -14,7 +14,8 @@ function is_valid_email($str)
     return (false !== filter_var($str, FILTER_VALIDATE_EMAIL));
 }
 */
-function is_valid_email($str){
+function is_valid_email($str)
+{
     return $error = (!filter_var($str, FILTER_VALIDATE_EMAIL)) ? true : false;
 }
 
@@ -62,9 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if (mysqli_stmt_num_rows($stmt) == 1) {
                     $Correo_err = "Este correo ya está registrado.";
-                }
-                if ($str == false) {
-                    $Correo_err = "Introduce un formato de mail valido";
                 } else {
                     $Correo = trim($_POST["Correo"]);
                 }
@@ -121,9 +119,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty(trim($_POST["fecha"]))) {
+
+       
         $fecha_err = "Por favor ingrese su fecha de nacimiento.";
+       
+        
     } else {
-        $sql = "SELECT id FROM users WHERE fecha = ?";
+
+        $date1 = new DateTime($_POST["fecha"]);
+        $date2 = new DateTime("now");
+        $diff = $date1->diff($date2);
+        
+        if($diff->y > 15){
+            $fecha_err = "";
+            $sql = "SELECT id FROM users WHERE fecha = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $param_fecha);
@@ -140,13 +149,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         mysqli_stmt_close($stmt);
+        }else{
+            $fecha_err = "Tienes que ser mayor de 15";
+        }
+        
     }
-
 
     if (empty(trim($_POST["num_tlf"]))) {
         $num_tlf_err = "Por favor ingrese un numero de teléfono.";
     } else {
-        $sql = "SELECT id FROM users WHERE num_tlf = ?";
+
+        $param_tlf = trim($_POST["num_tlf"]);
+        if($param_tlf>=600000000 && $param_tlf<=799999999){
+            $sql = "SELECT id FROM users WHERE num_tlf = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $param_tlf);
@@ -167,6 +182,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         mysqli_stmt_close($stmt);
+        }else{
+            $num_tlf_err = "Por favor ingrese un numero de teléfono válido";
+        }
+        
     }
 
 
@@ -187,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty($username_err) && empty($password_err) && empty($confirm_password_err && empty($Correo_err)) && empty($password_err)) {
+    if (empty($username_err) && empty($password_err) && empty($fecha_err) && empty($num_tlf_err) && empty($confirm_password_err && empty($Correo_err)) && empty($password_err)){
 
 
 
@@ -283,18 +302,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($Correo_err)) ? 'has-error' : ''; ?>">
                     <label for="Correo">Mail</label><br>
                     <span class="help-block"><?php echo $Correo_err; ?></span>
-                    <input class="form-control" type="text" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
+                    <input class="form-control" type="email" id="Correo" name="Correo" value="<?php echo $Correo; ?>" required><br><br>
                 </div>
 
                 <div class="col-12 col-md-6 form-group <?php echo (!empty($num_tlf_err)) ? 'has-error' : ''; ?>">
                     <label for="num_tlf">Teléfono</label><br>
                     <span class="help-block" id="tel_error"><?php echo $num_tlf_err; ?></span>
-                    <input onkeyup="validateTel()" class="form-control" type="number" max="999999999" min="111111111" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
+                    <input onkeyup="validateTel()" class="form-control" type="number" id="num_tlf" name="num_tlf" value="<?php echo $num_tlf; ?>" required><br><br>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 <?php echo (!empty($fecha_err)) ? 'has-error' : ''; ?>">
                     <label for="fecha">Fecha de nacimiento</label><br>
-                    <span class="help-block" id="data_error">
+                    <span class="help-block" id="data_error"><?= $fecha_err ?></span>
                     <input onkeyup="validateData()" class="form-control" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" required><br><br>
                 </div>
 
@@ -310,7 +329,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                         <label for="password">Repetir Contraseña</label><br>
                         <span class="help-block" id="password_error2"></span>
-                        <input required onkeyup="validatePassword()" class="form-control" type="password" name="password" id="confirm_pass" value="<?php echo $confirm_password; ?>"><br><br>
+                        <input required onkeyup="validatePassword()" class="form-control" type="password" name="password" id="confirm_pass" value="<?php echo $password; ?>"><br><br>
                     </div>
                 </div>
             </div>

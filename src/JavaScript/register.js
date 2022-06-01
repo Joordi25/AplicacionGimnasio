@@ -26,7 +26,7 @@ function validateData() {
         // aqui haces lo que quieras con la validacion de si es mayor a 15
         document.getElementById("data_error").innerHTML = "Introduce una edad valida";
     } else if (edad < 16) {
-        document.getElementById("data_error").innerHTML = "No puedes ser menor de 16 años";
+        document.getElementById("data_error").innerHTML = "No puedes ser menor de 15 años";
     } else {
         document.getElementById("data_error").innerHTML = "";
     }
