@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         if ($stmt = mysqli_prepare($link, $sql)) {
-            $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $param_password = hash("sha256", $new_password);
             $param_id = $_SESSION["id"];
 
             var_dump($_SESSION);
